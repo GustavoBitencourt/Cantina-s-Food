@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" media="screen" href="cantina.css">
-	<title></title>
+    <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
 	<!-- 01 HEADER -->
@@ -19,7 +19,7 @@
         
 	<!-- NAV -->
 	<nav>
-        <li><a onclick="abrir()">Opção 1</a></li>
+        <li><a id="menu" onclick="abrir()">Opção 1</a></li>
         <li><a href="#">Opção 2</a></li>
         <li><a href="#">Opção 3</a></li>
         <li><a href="#">Opção 4</a></li>
@@ -30,14 +30,14 @@
 <div class="menuzao">
         <div class="articles">
             
-            <div class="titulo">
+            <div class="titulo" >
             Controle de Produtos
             </div>
             <!--ARTICLE 1-->
-            <article id="article1">
-                <div class="none"></div>
-                <div class="titleArticle">
-    <p><a href="#">Cadastrar Produto</a></p>
+            <article id="article1" >
+                <div class="none" ></div>
+                <div class="titleArticle" >
+    <p><a href="cadastra.html" onclick="cadastrar()">Cadastrar Produto</a></p>
                 </div>
             </article>
 
@@ -70,7 +70,7 @@
 
 <script>
     function abrir(){
-      document.getElementById("menu").style.display = "block"
+      document.getElementById("menu").style.display = "block";
     }
 
     function fechar(){
