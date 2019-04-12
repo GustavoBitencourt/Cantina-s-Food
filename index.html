@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="IMG/burger.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" media="screen" href="cantina.css"><head>
+    <link rel="stylesheet" type="text/css" media="screen" href="cantina.css">
 	<title></title>
 </head>
 <body>
@@ -19,7 +19,7 @@
         
 	<!-- NAV -->
 	<nav>
-        <li><a href="#">Opção 1</a></li>
+        <li><a onclick="abrir()">Opção 1</a></li>
         <li><a href="#">Opção 2</a></li>
         <li><a href="#">Opção 3</a></li>
         <li><a href="#">Opção 4</a></li>
@@ -68,6 +68,16 @@
         </div>
     </div>
 
+<script>
+    function abrir(){
+      document.getElementById("menu").style.display = "block"
+    }
+
+    function fechar(){
+       document.getElementById("menu").style.display = "none"
+    }
+
+</script>﻿
  
 </body>
 </html>

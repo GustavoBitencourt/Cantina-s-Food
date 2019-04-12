@@ -55,6 +55,7 @@ h1{
 
 
 .menuzao{
+    margin-top: 5%;
     width: 100%;
     height: 500px;
     display: flex;
@@ -66,14 +67,14 @@ h1{
 
 .titulo {
     width: 100%;
-    height: 5px;
+    height: 10%;
     font-family: 'Arial', sans-serif;
     font-size: 30px;
     /*background-color: red;*/
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 3%;
     color: black;
 }
 
@@ -93,7 +94,7 @@ h1{
 
 .menuzao .articles {
     width: 60%;
-    height: 90%;
+    height: 95%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -158,3 +159,4 @@ a {
     justify-content: center;
     align-items: center;
 }
+
