@@ -41,7 +41,7 @@ if(!empty($_SESSION['mensagem'])) {
 		$id=$_SESSION['id'];
 		$nome=$_SESSION['nome'];
 	}else{
-		$_SESSION['mensagem']="Você não está logado"; 
+		$_SESSION['mensagem']="Você não está logado."; 
 		
 	}
 
