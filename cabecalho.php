@@ -12,17 +12,19 @@
 </head>
 <body>
 	<!-- 01 HEADER -->
-    <header>
-
-            <div class="title">Projeto CantIF</div><img src="IMG/logo.png" class="titleimg">
-        
-	<!-- NAV -->
-	<nav>
-        <!-- <li><a href="#">Opção 1</a></li>
-        <li><a href="#">Opção 2</a></li>
-        <li><a href="#">Opção 3</a></li>
-        <li><a href="#">Opção 4</a></li>
-        <li><a href="#">Opção 5</a></li> -->
-        <li><a href="login.php">Login</a></li>
-    </nav>
-</header>
+        <header class="menu-bg">
+        <div class="menu">
+            <div class="menu-logo">
+                <a href="index.php">Projeto CantIF</a>
+            </div>
+            <nav class="menu-nav">
+                <ul>
+                    <!-- <li><a href="#">Opção1</a></li>
+                    <li><a href="#">Opção2</a></li>
+                    <li><a href="#">Opção3</a></li> -->
+                    <li><a href="login.php">Login</a></li>
+                    <img src="IMG/logo.png" class="titleimg">
+                </ul>
+            </nav>
+        </div>
+    </header>

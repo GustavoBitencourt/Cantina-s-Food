@@ -12,16 +12,43 @@ nav, ul {
 
 /* -- HEADER -- */
 
-header {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+.menu-bg {
+    background: grey;
+}
+
+.menu {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 15px 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
-    background-color: grey;
+}
+
+.menu a {
+    color: white;
+}
+
+.menu-logo a {
+    font-size: 2.25em;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+.menu-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu-nav a {
+    font-size: 1.25em;
+    display: block;
+    padding: 10px;
+}
+
+.menu-nav a:hover{
+    color: black;
 }
 
 
@@ -32,12 +59,11 @@ header {
 }
 
 .titleimg {
-    margin-left: 20%;
-    width: 5%;
-    height: 5%;
+    height: 50px;
+    width: 50px;
 }
 
-header nav {
+/*header nav {
     margin-right: 20%;
     display: flex;
 }
@@ -57,7 +83,7 @@ body {
 
 h1{
     text-align: center;
-}
+}*/
 
 
 .menuzao{
@@ -324,11 +350,18 @@ input.button:hover{
 .formulariologin {
     margin: 0 auto;
     width: 30%;
-    margin-top: 8%;
+    margin-top: 3%;
     text-align: center;
-    display: block;
+}
 
-  }
+.botoes {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    margin-top: 1%;
+    text-align: center;
+}
 
 .input2{
     border-radius: 1px;
@@ -341,7 +374,8 @@ input.button:hover{
     height: 40px;
     border: 2px solid grey;
     background: transparent;
-    margin-bottom: 1em
+    margin-bottom: 1em;
+    text-align: center;
 }
 
 .input2:hover,.input2:focus{
@@ -379,7 +413,8 @@ input.button:hover{
     background: transparent;
     display: block;
     width: 150px;
-    padding-top: 5px;
+    margin-top: 0px;
+   /* padding-top: 5px;*/
     -webkit-box-shadow: 3px 3px 0 -2px white,3px 3px 0 0 grey;
     -moz-box-shadow: 3px 3px 0 -2px white,3px 3px 0 0 grey;
     box-shadow: 3px 3px 0 -2px white,3px 3px 0 0 grey;
@@ -387,9 +422,9 @@ input.button:hover{
 }
 
 .button2:hover {
-    -webkit-box-shadow: 2px 2px 0 -2px grey,2px 2px 0 0 black;
-    -moz-box-shadow: 2px 2px 0 -2px grey,2px 2px 0 0 black;
-    box-shadow: 2px 2px 0 -2px grey,2px 2px 0 0 black;
+    -webkit-box-shadow: 3px 3px 0 -2px grey,3px 3px 0 0 black;
+    -moz-box-shadow: 3px 3px 0 -2px grey,3px 3px 0 0 black;
+    box-shadow: 3px 3px 0 -2px grey,3px 3px 0 0 black;
 }
 
 h1 {
