@@ -4,19 +4,24 @@
 <?php
 session_start();
 require_once("conecta.php");
-require_once("../cabecalho.php")
+require_once("cabecalho.php");
 
-if(!empty($_SESSION['mensagem'])) {
-        echo $_SESSION['mensagem'];
-        unset($_SESSION['mensagem']);
-    }
+$nome=$_SESSION['nome'];
 
 ?>
 
-
 <div class="menuzao">
         <div class="articles">
-            
+            <div class="mensagem">
+                    Bem vindo(a) <?=$nome?>, o que deseja?<br>
+                <?php
+                    if(!empty($_SESSION['mensagem'])) {
+                    echo $_SESSION['mensagem'];
+                    unset($_SESSION['mensagem']);
+                    }
+                ?>
+            </div>
+
             <div class="titulo">
             Controle de Produtos
             </div>

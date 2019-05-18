@@ -16,6 +16,12 @@ if(!empty($_SESSION['mensagem'])) {
 <div class="menuzao">
         <div class="articles">
             
+
+            <?php
+                if(isset($_GET["logout"]) && $_GET["logout"]==true) { ?>
+                    <p class="msg-sucesso">Deslogado com sucesso!</a>
+            <?php } ?>
+
             <div class="titulo">
             Controle de Produtos
             </div>
@@ -47,27 +53,17 @@ if(!empty($_SESSION['mensagem'])) {
             <article id="article4">
                 <div class="none"></div>
                 <div class="titleArticle">
-        <p><a href="#" onclick="alert('Acesso negado, faça o login');">Controle de Vendas</a></p>
+        <p><a href="#" onclick="mensagem()">Controle de Vendas</a></p>
                 </div>
             </article>
         
         </div>
     </div>
-
-    <div id="modal-form" class="modal-container">
-        <div class="modal">
-            <button class="fechar">x</button>
-            <h3 class="subtitulo">Cadastrar Produto</h3>
-            <form action="cadastroProduto.php" method="get">
-                <br><input type="text" name="nomeDoProduto" class="input" placeholder="Nome do Produto"><br><br>
-                <input type="text" class="input"  name="descricao" placeholder="Descrição do Produto"><br><br>
-                <input type="text" class="input"  name="valor" placeholder="Valor do Produto"><br><br>
-                <input type="file" name="imagem"  name="imagem" placeholder="Imagem" class="enviar"><br><br>
-                <input type="submit" class="button" name="cadastrar" value="Cadastrar">
-            </form>
-        </div>
-    </div>
-
+<script>
+    function mensagem(){
+        alertify.alert("Acesso Negado, Faça o Login").set('label', 'aceitar');
+    }
+</script>
  
 </body>
 </html>

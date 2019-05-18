@@ -63,6 +63,14 @@ nav, ul {
     width: 50px;
 }
 
+.mensagem {
+    text-align: center;
+    color: red;
+}
+
+.msg-sucesso {
+    color: green;
+}
 /*header nav {
     margin-right: 20%;
     display: flex;
