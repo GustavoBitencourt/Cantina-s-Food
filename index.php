@@ -5,6 +5,9 @@
 
 require_once("conecta.php");
 require_once("cabecalho.php");
+?>
+<div class="menuzao">
+<?php
 
 if(!empty($_SESSION['mensagem'])) {
         echo $_SESSION['mensagem'];
@@ -13,7 +16,7 @@ if(!empty($_SESSION['mensagem'])) {
 
 ?>
 
-<div class="menuzao">
+
         <div class="articles">
             
 

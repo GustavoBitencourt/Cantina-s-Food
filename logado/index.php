@@ -15,10 +15,10 @@ $nome=$_SESSION['nome'];
             <div class="mensagem">
                     Bem vindo(a) <?=$nome?>, o que deseja?<br>
                 <?php
-                    if(!empty($_SESSION['mensagem'])) {
-                    echo $_SESSION['mensagem'];
-                    unset($_SESSION['mensagem']);
-                    }
+                     if(!empty($_SESSION['mensagem'])) {
+                     echo $_SESSION['mensagem'];
+                     unset($_SESSION['mensagem']);
+                     }
                 ?>
             </div>
 
