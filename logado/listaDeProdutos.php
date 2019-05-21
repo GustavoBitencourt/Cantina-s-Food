@@ -57,7 +57,7 @@
                 Foto:<input type="file" name="imagem" placeholder="Imagem">
 
                 <!-- <input type="file" name="imagem"  name="imagem" placeholder="Imagem" class="enviar"> --><br><br>
-                <input type="submit" class="button" name="cadastrar" value="Cadastrar">
+                <input type="submit" class="button" name="cadastrar" value="Concluir">
             </form>
         </form>
         </div>
