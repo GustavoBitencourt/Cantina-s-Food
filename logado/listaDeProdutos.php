@@ -8,11 +8,7 @@
     
     if (mysqli_num_rows($enviar)>0) {
         $resultado=mysqli_fetch_all($enviar);
-        // echo "<pre>";
-        // var_dump($resultado);
-        // echo "</pre>";
-        // die(); 
-
+     
         if(!empty($_SESSION['mensagem'])) {
         echo $_SESSION['mensagem'];
         unset($_SESSION['mensagem']);
@@ -28,16 +24,13 @@
         <?php
 
     foreach ($resultado as $produto) :
-        // echo "<pre>";
-        // var_dump($quarto);
-        // echo "</pre>";
+    
 ?>
         <tr>
             <td><?php echo $produto['2'];?></td>
             <td><?php echo $produto['1'];?></td>
             <td><?php echo $produto['3'];?></td>
-            <td><a href="editacliente.php/?cliente=<?php echo $cliente['0'];?>"><button>Editar</button></td>
-            <td><a href="excluircliente.php/?cliente=<?php echo $cliente['0'];?>"><button>Excluir</button></td>
+            <td><a href="alteraProduto.php/?cliente=<?php echo $produto['0'];?>"><button>Alterar Produto</button></td>
         </tr>
 
 <?php
