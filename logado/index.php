@@ -45,7 +45,7 @@ $nome=$_SESSION['nome'];
             <article id="article3">
                 <div class="none"></div>
                 <div class="titleArticle">
-        <p><a href="#">Produtos Cadastrados</a></p>
+        <p><a href="../listaDeProdutos.php">Produtos Cadastrados</a></p>
                 </div>
             </article>
 
