@@ -45,7 +45,7 @@ $nome=$_SESSION['nome'];
             <article id="article3">
                 <div class="none"></div>
                 <div class="titleArticle">
-        <p><a href="../listaDeProdutos.php">Produtos Cadastrados</a></p>
+        <p><a href="listaDeProdutos.php">Produtos Cadastrados</a></p>
                 </div>
             </article>
 
@@ -68,9 +68,15 @@ $nome=$_SESSION['nome'];
                 <br><input type="text" name="nomeDoProduto" class="input" placeholder="Nome do Produto"><br><br>
                 <input type="text" class="input"  name="descricao" placeholder="Descrição do Produto"><br><br>
                 <input type="text" class="input"  name="valor" placeholder="Valor do Produto"><br><br>
-                <input type="file" name="imagem"  name="imagem" placeholder="Imagem" class="enviar"><br><br>
+
+                <form action="executaUpload.php" method="POST"  enctype="multipart/form-data">
+                <input type="hidden" name="MAX_FILE_SIZE" value="200000">
+                Foto:<input type="file" name="imagem" placeholder="Imagem">
+
+                <!-- <input type="file" name="imagem"  name="imagem" placeholder="Imagem" class="enviar"> --><br><br>
                 <input type="submit" class="button" name="cadastrar" value="Cadastrar">
             </form>
+        </form>
         </div>
     </div>
 

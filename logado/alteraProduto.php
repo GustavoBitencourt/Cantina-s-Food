@@ -2,12 +2,7 @@
     session_start();
     require_once("conecta.php");
     require_once("cabecalho.php");
-
-   
-  
-		
-
-?>
+ ?>
 
 	<form action="alterarProduto.php" method="get" accept-charset="utf-8">
 	Nome<br>

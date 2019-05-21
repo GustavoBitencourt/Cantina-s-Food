@@ -29,7 +29,7 @@
         <tr>
             <td><?php echo $produto['2'];?></td>
             <td><?php echo $produto['1'];?></td>
-            <td><?php echo $produto['3'];?></td>
+            <td><img src="ImgProdutos/<?php echo $produto['3'];?>" class="imgprodutos"></td>
             <td><a href="alteraProduto.php/?cliente=<?php echo $produto['0'];?>"><button>Alterar Produto</button></td>
         </tr>
 
