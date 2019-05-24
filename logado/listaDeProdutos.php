@@ -2,7 +2,6 @@
     session_start();
     require_once("conecta.php");
     require_once("cabecalho.php");
-
     $comando="SELECT * FROM produtos";
     $enviar=mysqli_query($conn, $comando);
     
@@ -22,7 +21,6 @@
         </tr>
 
         <?php
-
     foreach ($resultado as $produto) :
     
 ?>
@@ -76,10 +74,8 @@
                 }
             }
         
-
         const mod = document.querySelector('.abremodal');
         mod.addEventListener('click', () => iniciaModal('modal-form'));
-
 </script>
 
 <a href="index.php">Voltar</a>
