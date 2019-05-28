@@ -14,7 +14,7 @@ if(isset($_POST['enviar'])) {
 		if($resultado) {
 			$_SESSION['nome']=$resultado['nome'];
 			$_SESSION['id']=$resultado['id'];
-			header("location:logado/");
+			header("location:logado/index.php");
 			exit;
 		}else{
 			$_SESSION['mensagem']="Email ou senha incorretos";

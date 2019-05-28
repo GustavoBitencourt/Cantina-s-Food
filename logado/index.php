@@ -2,44 +2,26 @@
 <html>
 
 <?php
+session_start();
 require_once("conecta.php");
+require_once("cabecalho.php");
 
-if(!empty($_SESSION['mensagem'])) {
-        echo $_SESSION['mensagem'];
-        unset($_SESSION['mensagem']);
-    }
+$nome=$_SESSION['nome'];
 
 ?>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>CantIF</title>
-    <link rel="shortcut icon" href="../IMG/logo.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" media="screen" href="../cantina.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-</head>
-<body>
-	<!-- 01 HEADER -->
-    <header>
-
-            <div class="title">Projeto CantIF</div><img src="../IMG/logo.png" class="titleimg">
-        
-	<!-- NAV -->
-	<nav>
-        <!-- <li><a href="#">Opção 1</a></li>
-        <li><a href="#">Opção 2</a></li>
-        <li><a href="#">Opção 3</a></li>
-        <li><a href="#">Opção 4</a></li>
-        <li><a href="#">Opção 5</a></li> -->
-        <li><a href="login.php">Login</a></li>
-    </nav>
-</header>
 
 <div class="menuzao">
         <div class="articles">
-            
+            <div class="mensagem">
+                    Bem vindo(a) <?=$nome?>, o que deseja?<br>
+                <?php
+                     if(!empty($_SESSION['mensagem'])) {
+                     echo $_SESSION['mensagem'];
+                     unset($_SESSION['mensagem']);
+                     }
+                ?>
+            </div>
+
             <div class="titulo">
             Controle de Produtos
             </div>
@@ -63,7 +45,7 @@ if(!empty($_SESSION['mensagem'])) {
             <article id="article3">
                 <div class="none"></div>
                 <div class="titleArticle">
-        <p><a href="#">Produtos Cadastrados</a></p>
+        <p><a href="listaDeProdutos.php">Produtos Cadastrados</a></p>
                 </div>
             </article>
 
@@ -71,7 +53,7 @@ if(!empty($_SESSION['mensagem'])) {
             <article id="article4">
                 <div class="none"></div>
                 <div class="titleArticle">
-        <p><a href="#">Controle de Vendas</a></p>
+        <p><a href="vendas.php">Controle de Vendas</a></p>
                 </div>
             </article>
         
@@ -86,9 +68,15 @@ if(!empty($_SESSION['mensagem'])) {
                 <br><input type="text" name="nomeDoProduto" class="input" placeholder="Nome do Produto"><br><br>
                 <input type="text" class="input"  name="descricao" placeholder="Descrição do Produto"><br><br>
                 <input type="text" class="input"  name="valor" placeholder="Valor do Produto"><br><br>
-                <input type="file" name="imagem"  name="imagem" placeholder="Imagem" class="enviar"><br><br>
+
+                <form action="executaUpload.php" method="POST"  enctype="multipart/form-data">
+                <input type="hidden" name="MAX_FILE_SIZE" value="200000">
+                Foto:<input type="file" name="imagem" placeholder="Imagem">
+
+                <!-- <input type="file" name="imagem"  name="imagem" placeholder="Imagem" class="enviar"> --><br><br>
                 <input type="submit" class="button" name="cadastrar" value="Cadastrar">
             </form>
+        </form>
         </div>
     </div>
 
