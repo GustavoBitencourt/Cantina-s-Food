@@ -53,7 +53,7 @@ $nome=$_SESSION['nome'];
             <article id="article4">
                 <div class="none"></div>
                 <div class="titleArticle">
-        <p><a href="#">Controle de Vendas</a></p>
+        <p><a href="vendas.php">Controle de Vendas</a></p>
                 </div>
             </article>
         

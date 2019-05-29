@@ -28,7 +28,7 @@
             <td><?php echo $produto['2'];?></td>
             <td><?php echo $produto['1'];?></td>
             <td><img src="ImgProdutos/<?php echo $produto['3'];?>" class="imgprodutos"></td>
-            <td><a href="#/?cliente=<?php echo $produto['0'];?>" class="abremodal"><button>Alterar Produto</button></td>
+            <td><a href="#/?produto=<?php echo $produto['0'];?>" onclick="iniciaModal('modal-form',<?php echo $produto['0'];?>)" class="abremodal"><button>Alterar Produto</button></td>
         </tr>
 
 <?php
@@ -46,15 +46,19 @@
             <button class="fechar">x</button>
             <h3 class="subtitulo">Alterar Produto</h3>
             <form action="alterarProduto.php" method="get">
-                <br><input type="text" name="nomeDoProduto" class="input" placeholder="Nome do Produto"><br><br>
-                <input type="text" class="input"  name="descricao" placeholder="Descrição do Produto"><br><br>
-                <input type="text" class="input"  name="valor" placeholder="Valor do Produto"><br><br>
-
+                Nome do Produto:
+                <br><input type="text" name="nomeDoProduto" class="input" id='nomeDoProduto'><br><br>
+                Descrição do Produto:
+                <input type="text" class="input"  name="descricao" id="descricao"><br><br>
+                Valor do Produto:
+                <input type="text" class="input"  name="valor" id="valor"><br><br>
+               
+                Foto:
                 <form action="executaUpload.php" method="POST"  enctype="multipart/form-data">
                 <input type="hidden" name="MAX_FILE_SIZE" value="200000">
-                Foto:<input type="file" name="imagem" placeholder="Imagem">
-
-                <!-- <input type="file" name="imagem"  name="imagem" placeholder="Imagem" class="enviar"> --><br><br>
+                <input type="file" name="imagem" value="<?php echo $produto['3']?>">
+               <br><br>
+                <input type="hidden" name="cd_produto" id="cd_produto">
                 <input type="submit" class="button" name="cadastrar" value="Concluir">
             </form>
         </form>
@@ -62,7 +66,8 @@
     </div>
 
 <script>
-    function iniciaModal(modalID) {
+    function iniciaModal(modalID,id) {
+        requisitar(id);
                const modal = document.getElementById(modalID);
                 if(modal) {
                     modal.classList.add('mostrar');
@@ -74,8 +79,53 @@
                 }
             }
         
-        const mod = document.querySelector('.abremodal');
-        mod.addEventListener('click', () => iniciaModal('modal-form'));
+       // const mod = document.querySelector('.abremodal');
+       // mod.addEventListener('click', () => iniciaModal('modal-form'));
+
+       function inicializaAjax() {
+ var ajax
+ if (window.XMLHttpRequest) {
+ ajax= new XMLHttpRequest();
+ } else if (window.ActiveXObject) {
+ ajax=new ActiveXObject("Msxml2.XMLHTTP");
+ if (!ajax) {
+ ajax=new ActiveXObject("Microsoft.XMLHTTP");
+ }
+ } else {
+ alert ("Seu navegador não suporta esta aplicação");
+ }
+ return ajax;
+}
+function requisitar(id){
+var requisicaoAjax = inicializaAjax();
+if (requisicaoAjax) {
+ requisicaoAjax.onreadystatechange = function() {
+ if (requisicaoAjax.readyState == 4) {
+ if (requisicaoAjax.status==200) {
+ 
+ if (requisicaoAjax.responseText) {
+    dadosJSON = JSON.parse(requisicaoAjax.responseText);
+    document.getElementById('nomeDoProduto').value=dadosJSON.nomeDoProduto;
+    document.getElementById('descricao').value=dadosJSON.descricao;
+    document.getElementById('valor').value=dadosJSON.valor;
+    document.getElementById('cd_produto').value=dadosJSON.cd_produto;
+
+ } else {
+alert("Problema na conexão do banco");
+ }
+ } else {
+ alert("Problema na Comunicação");
+ }
+ }
+ };
+}
+requisicaoAjax.open("GET", "busca_produto.php?id="+id);
+requisicaoAjax.send(null);
+}
+
+
+
+
 </script>
 
 <a href="index.php">Voltar</a>

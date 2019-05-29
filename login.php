@@ -45,7 +45,7 @@ if(!empty($_SESSION['mensagem'])) {
 </form>
 
 <a href="cadastroUsuario.php" class="button2">Cadastrar</a></div>
-<a href="perdiPassword.php" class="button6">Esqueci a senha</a>
+<a href="esqueceuSenha.php" class="button2">Esqueci a senha</a>
 <a href="sair.php" class="button5">Sair</a>
 
 

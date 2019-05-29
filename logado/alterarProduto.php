@@ -2,8 +2,8 @@
 session_start();
 require_once("conecta.php");
 
-	if(isset($_GET['enviar'])) {
-		$produto=$_GET['produto'];
+	if(isset($_GET['cadastrar'])) {
+		$produto=$_GET['cd_produto'];
 
 		if(!empty($_GET['valor'])){
 			$valor=$_GET['valor'];
@@ -14,7 +14,7 @@ require_once("conecta.php");
 			
 		}
 		
-		if(!empty($_GET['imagem']){
+		if(!empty($_GET['imagem'])){
 			$imagem=$_GET['imagem'];
 			
 
@@ -39,7 +39,7 @@ require_once("conecta.php");
 				header("location:listaDeProdutos.php");
 				exit;
 			}
-	}
+	
 	}else{
 		header("location:index.php");
 				exit;
