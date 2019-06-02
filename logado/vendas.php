@@ -114,6 +114,7 @@ require_once("cabecalho.php");
             <td><form action=# method="get">
                 <input type="hidden" name="id" value="<?php echo $produto['0']?>" />
                 <button class="btn btn-danger">Finalizar pedido</button></form></td>
+                <input type="text" name="Valor total" placeholder="Valor total">
 		</form>
 
 	</div>
