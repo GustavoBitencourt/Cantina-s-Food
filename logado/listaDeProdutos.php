@@ -13,6 +13,11 @@
         unset($_SESSION['mensagem']);
     }
 ?>
+
+<?php if(array_key_exists("removido", $_GET) && $_GET['removido']=='true') { ?>
+    <p class="alert-success">Produto removido com sucesso!</p>
+<?php } ?>
+
     <table>
         <tr>
             <th>Nome do Produto</th>
@@ -29,6 +34,9 @@
             <td><?php echo $produto['1'];?></td>
             <td><img src="ImgProdutos/<?php echo $produto['3'];?>" class="imgprodutos"></td>
             <td><a href="#/?produto=<?php echo $produto['0'];?>" onclick="iniciaModal('modal-form',<?php echo $produto['0'];?>)" class="abremodal"><button>Alterar Produto</button></td>
+            <td><form action="excluiProduto.php" method="get">
+                <input type="hidden" name="id" value="<?php echo $produto['0']?>" />
+                <button class="btn btn-danger">Excluir</button></form></td>
         </tr>
 
 <?php
@@ -108,8 +116,7 @@ if (requisicaoAjax) {
     document.getElementById('nomeDoProduto').value=dadosJSON.nomeDoProduto;
     document.getElementById('descricao').value=dadosJSON.descricao;
     document.getElementById('valor').value=dadosJSON.valor;
-    document.getElementById('cd_produto').value=dadosJSON.cd_produto;
-
+    document.getElementById('cd_produto').value=dadosJSON.cd_produto;    
  } else {
 alert("Problema na conexão do banco");
  }
@@ -122,10 +129,6 @@ alert("Problema na conexão do banco");
 requisicaoAjax.open("GET", "busca_produto.php?id="+id);
 requisicaoAjax.send(null);
 }
-
-
-
-
 </script>
 
 <a href="index.php">Voltar</a>
