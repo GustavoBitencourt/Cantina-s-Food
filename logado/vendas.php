@@ -104,6 +104,16 @@ require_once("cabecalho.php");
 			<input type="text" name="codigo" placeholder="Código" class="codigo">
 			<input type="text" name="Descrição" placeholder="Descrição do Produto Clicado">
 			<input type="text" name="Valor" placeholder="Valor do Produto">
+            <br><br>
+            <td><form action=# method="get">
+                <input type="hidden" name="id" value="<?php echo $produto['0']?>" />
+                <button class="btn btn-danger">Cancelar Pedido</button></form></td>
+            <td><form action=# method="get">
+                <input type="hidden" name="id" value="<?php echo $produto['0']?>" />
+                <button class="btn btn-danger">Voltar</button></form></td>
+            <td><form action=# method="get">
+                <input type="hidden" name="id" value="<?php echo $produto['0']?>" />
+                <button class="btn btn-danger">Finalizar pedido</button></form></td>
 		</form>
 
 	</div>
