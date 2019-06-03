@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="language" content="PT-BR">
     <link rel="stylesheet" type="text/css" href="mobile.css">
-    <link rel="icon"  href="../IMG/logo.png">
+    <link rel="icon"  href="../../IMG/logo.png">
     <link href="https://fonts.googleapis.com/css?family=Mina:400,700&display=swap" rel="stylesheet">
 </head>
         
@@ -23,23 +23,18 @@
             </div>
 
             <div class="nav-menu">
-                <div class="container"><img onclick="abrir()" src="../IMG/menu.png"></div>
+                <div class="container"><img onclick="abrir()" src="../../IMG/menu.png"></div>
             </div>
         </nav>
 
          <div id="menu" class="menu">
         <div class="container">
             <a id="avatar" href="#">
-                <div class="logBlock"><div class="textuser">Login</div></div>
+                <div class="logBlock"><div class="textuser">UsuárioAbu</div></div>
             </a><div class="linha"></div>
-
-                <form action="#" method="post" name="formulario" accept-charset="utf-8"> 
-                    <img src="IMG/email.png" class="icon"> Email<br>
-                <input type="text" name="email" class=""><br> 
-                    <img src="IMG/lock.png" class="icon2"> Senha<br>
-                <input type="password" name="senha" class=""><br>
-                <button type="submit" name="enviar" class="botaoenviar" value="Entrar"></button> 
-                </form>
+            <a href="pedidos.php" style="margin-top: 30px;"><img src="../IMG/config.png" id="icon">Pedidos</a>
+            <a href="Configurações.php" style="margin-top: 10px;"><img src="../IMG/pedidos.png" id="icon">Configurações</a>
+            <a href="logout.php" style="margin-top: 10px;"><img src="../IMG/logout.png" id="icon">Logout</a>
             
         </div>
     </div>
