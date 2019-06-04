@@ -30,15 +30,21 @@
          <div id="menu" class="menu">
         <div class="container">
             <a id="avatar" href="#">
-                <div class="logBlock"><div class="textuser">Login</div></div>
+                <div class="logBlock"><div class="textuser">Cadastro</div></div>
             </a><div class="linha"></div>
 
                 <form action="#" method="post" name="formulario" accept-charset="utf-8"> 
-                    <img src="IMG/email.png" class="icon"> Email<br>
-                <input type="text" name="email" class=""><br> 
-                    <img src="IMG/lock.png" class="icon2"> Senha<br>
+                    <img src="IMG/email.png" class="icon01"> Email<br>
+                <input type="text" name="email" class=""><br>
+                    <img src="IMG/nome.png" class="icon3"> Nome<br>
+                <input type="text" name="email" class=""><br>
+                    <img src="IMG/matric.png" class="icon3"> Matrícula ou SIAPE<br>
+                <input type="text" name="email" class=""><br>   
+                    <img src="IMG/lock.png" class="icon3"> Senha<br>
                 <input type="password" name="senha" class=""><br>
-                <button type="submit" name="enviar" class="botaoenviar" value="Entrar"></button> 
+                    <img src="IMG/lock.png" class="icon3"> Repetir Senha<br>
+                <input type="password" name="senha" class=""><br>
+                <input type="submit" name="enviar" class="botaoenviar" value="Cadastrar">
                 </form>
             
         </div>
@@ -47,13 +53,23 @@
         <div class="infos">
             <div class="title">BEM VINDO</div>
 
+
+                <form action="#" method="post" name="formulario" accept-charset="utf-8"> 
+                <img src="IMG/email.png" class="icon"> Email<br>
+                <input type="text" name="email" class=""><br> 
+                <img src="IMG/lock.png" class="icon2"> Senha<br>
+                <input type="password" name="senha" class=""><br>
+                <input type="submit" class="botent" name="enviar" value="Entrar"></button> 
+                </form>
+
+
                  <div class="cards">
 
                     <div onclick="abrir()" class="card" id="card1">
                             <div class="card-top"></div>
                      <div class="card-botton">
                             <p>Cadastre-se</p>
-                            <div class="img"><img src="IMG/Conteudo/Categoria/audio.png"></div>
+                            <div class="img"><img src="IMG/confirm.png"></div>
                         </div>
                     </div>
                 </div>
@@ -79,6 +95,7 @@
         el.style.display = 'none';
     }
 }
+
 
 if (window.innerWidth > 450) {
     alert("Para visualizar, utilize um dispositivo mobile, ou abra em modo desenvolvedor (F12) e logo após ative o modo mobile Ctrl+Shift+M .");
