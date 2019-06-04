@@ -43,7 +43,22 @@
             
         </div>
     </div>
+<body>
+        <div class="infos">
+            <div class="title">BEM VINDO</div>
 
+                 <div class="cards">
+
+                    <div onclick="abrir()" class="card" id="card1">
+                            <div class="card-top"></div>
+                     <div class="card-botton">
+                            <p>Cadastre-se</p>
+                            <div class="img"><img src="IMG/Conteudo/Categoria/audio.png"></div>
+                        </div>
+                    </div>
+                </div>
+
+</body>
 
 
 
