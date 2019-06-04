@@ -6,7 +6,13 @@ session_start();
 require_once("conecta.php");
 require_once("cabecalho.php");
 
-$nome=$_SESSION['nome'];
+
+
+if(!isset($_SESSION['nome'])){
+   
+    header("location:../index.php");
+}else{
+    $nome=$_SESSION['nome'];
 
 ?>
 
@@ -14,12 +20,7 @@ $nome=$_SESSION['nome'];
         <div class="articles">
             <div class="mensagem">
                     Bem vindo(a) <?=$nome?>, o que deseja?<br>
-                <?php
-                     if(!empty($_SESSION['mensagem'])) {
-                     echo $_SESSION['mensagem'];
-                     unset($_SESSION['mensagem']);
-                     }
-                ?>
+              
             </div>
 
             <div class="titulo">
@@ -37,7 +38,7 @@ $nome=$_SESSION['nome'];
             <article id="article2">
                 <div class="none"></div>
                 <div class="titleArticle2">
-    <p><a href="#">Alterar poduto</a></p>
+    <p><a href="#">Alterar produto</a></p>
                 </div>
             </article>
 
@@ -68,12 +69,12 @@ $nome=$_SESSION['nome'];
                 <br><input type="text" name="nomeDoProduto" class="input" placeholder="Nome do Produto"><br><br>
                 <input type="text" class="input"  name="descricao" placeholder="Descrição do Produto"><br><br>
                 <input type="text" class="input"  name="valor" placeholder="Valor do Produto"><br><br>
-
+                <input type="text" class="input"  name="quantidade" placeholder="Quantidade inicial disponível"><br><br>
                 <form action="executaUpload.php" method="POST"  enctype="multipart/form-data">
                 <input type="hidden" name="MAX_FILE_SIZE" value="200000">
                 Foto:<input type="file" name="imagem" placeholder="Imagem">
 
-                <!-- <input type="file" name="imagem"  name="imagem" placeholder="Imagem" class="enviar"> --><br><br>
+                <br><br>
                 <input type="submit" class="button" name="cadastrar" value="Cadastrar">
             </form>
         </form>
@@ -96,8 +97,9 @@ $nome=$_SESSION['nome'];
 
         const mod = document.querySelector('.titleArticle');
         mod.addEventListener('click', () => iniciaModal('modal-form'));
-
 </script>
- 
+<?php
+ }
+ ?>
 </body>
 </html>

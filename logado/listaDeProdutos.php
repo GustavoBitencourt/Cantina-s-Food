@@ -23,6 +23,7 @@
             <th>Nome do Produto</th>
             <th>Valor</th>
             <th>Imagem ilustrativa</th>
+            <th>Quantidade disponível</th>
         </tr>
 
         <?php
@@ -33,10 +34,11 @@
             <td><?php echo $produto['2'];?></td>
             <td><?php echo $produto['1'];?></td>
             <td><img src="ImgProdutos/<?php echo $produto['3'];?>" class="imgprodutos"></td>
+            <td><?php echo $produto['5'];?></td>
             <td><a href="#/?produto=<?php echo $produto['0'];?>" onclick="iniciaModal('modal-form',<?php echo $produto['0'];?>)" class="abremodal"><button>Alterar Produto</button></td>
             <td><form action="excluiProduto.php" method="get">
                 <input type="hidden" name="id" value="<?php echo $produto['0']?>" />
-                <button class="btn btn-danger">Excluir</button></form></td>
+                <button class="btn btn-danger" onclick="return confirma('<?php echo $produto['2']?>')">Excluir</button></form></td>
         </tr>
 
 <?php
@@ -60,7 +62,8 @@
                 <input type="text" class="input"  name="descricao" id="descricao"><br><br>
                 Valor do Produto:
                 <input type="text" class="input"  name="valor" id="valor"><br><br>
-               
+                Quantidade:
+                <input type="text" class="input"  name="quantidade" id="quantidade"><br><br>
                 Foto:
                 <form action="executaUpload.php" method="POST"  enctype="multipart/form-data">
                 <input type="hidden" name="MAX_FILE_SIZE" value="200000">
@@ -117,6 +120,7 @@ if (requisicaoAjax) {
     document.getElementById('descricao').value=dadosJSON.descricao;
     document.getElementById('valor').value=dadosJSON.valor;
     document.getElementById('cd_produto').value=dadosJSON.cd_produto;    
+    document.getElementById('quantidade').value=dadosJSON.quantidade;
  } else {
 alert("Problema na conexão do banco");
  }
@@ -129,6 +133,19 @@ alert("Problema na conexão do banco");
 requisicaoAjax.open("GET", "busca_produto.php?id="+id);
 requisicaoAjax.send(null);
 }
+function confirma(id){
+    var resp=confirm('Deseja excluir o produto '+id+'?');
+    if(resp==false)
+    {
+        return false;
+
+    }
+    else
+    {
+        return true;
+    }
+}
+
 </script>
 
 <a href="index.php">Voltar</a>

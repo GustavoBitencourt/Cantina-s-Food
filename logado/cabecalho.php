@@ -22,7 +22,7 @@
                     <!-- <li><a href="#">Opção1</a></li>
                     <li><a href="#">Opção2</a></li>
                     <li><a href="#">Opção3</a></li> -->
-                    <li><a href="../login.php">Logado</a></li>
+                    <li><a href="perfil.php"><?php echo $_SESSION['nome'];?></a></li>
                     <img src="../IMG/logo.png" class="titleimg">
                     <li><a href="../logout.php">Sair</a></li>
                 </ul>
