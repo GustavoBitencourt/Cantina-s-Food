@@ -56,7 +56,7 @@ if(!empty($_SESSION['mensagem'])) {
             <article id="article4">
                 <div class="none"></div>
                 <div class="titleArticle">
-        <p><a href="#" onclick="mensagem()">Controle de Vendas</a></p>
+        <p><a href="#" onclick="alert('Acesso negado, faça o login');">Controle de Vendas</a></p>
                 </div>
             </article>
         

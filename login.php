@@ -17,17 +17,17 @@ session_start();
 require_once("conecta.php");
 
  
-if(!empty($_SESSION['mensagem'])) { 
-		echo $_SESSION['mensagem']; 
-		unset($_SESSION['mensagem']); 
-	}
-	if(!empty($_SESSION['nome']) and !empty($_SESSION['id'])) { 
-		$id=$_SESSION['id'];
-		$nome=$_SESSION['nome'];
-	}else{
-		$_SESSION['mensagem']="Você não está logado."; 
-		
-	}
+// if(!empty($_SESSION['mensagem'])) { 
+// 		echo $_SESSION['mensagem']; 
+// 		unset($_SESSION['mensagem']); 
+// 	}
+// 	if(!empty($_SESSION['nome']) and !empty($_SESSION['id'])) { 
+// 		$id=$_SESSION['id'];
+// 		$nome=$_SESSION['nome'];
+// 	}else{
+// 		$_SESSION['mensagem']="Você não está logado."; 
+// 		header("location:index.php")
+// 	}
 
 ?>
 

@@ -7,14 +7,7 @@ require_once("conecta.php");
 
 <div class="formulariologin">
 
-<?php 
 
-if(!empty($_SESSION['mensagem'])) { 
-		echo $_SESSION['mensagem'];  
-		unset($_SESSION['mensagem']); 
-	}
-
-?>
 
 	<form action="cadastrarUsuario.php" method="post" accept-charset="utf-8">
 
