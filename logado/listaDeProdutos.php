@@ -24,6 +24,8 @@
             <th>Valor</th>
             <th>Imagem ilustrativa</th>
             <th>Quantidade disponível</th>
+            <th>Editar</th>
+            <th>Excluir</th>
         </tr>
 
         <?php
@@ -35,10 +37,10 @@
             <td><?php echo $produto['1'];?></td>
             <td><img src="ImgProdutos/<?php echo $produto['3'];?>" class="imgprodutos"></td>
             <td><?php echo $produto['5'];?></td>
-            <td><a href="#/?produto=<?php echo $produto['0'];?>" onclick="iniciaModal('modal-form',<?php echo $produto['0'];?>)" class="abremodal"><button>Alterar Produto</button></td>
+            <td><a href="#/?produto=<?php echo $produto['0'];?>" onclick="iniciaModal('modal-form',<?php echo $produto['0'];?>)" class="abremodal"><button><img src="../IMG/edit.png" class="edit"></button></td>
             <td><form action="excluiProduto.php" method="get">
                 <input type="hidden" name="id" value="<?php echo $produto['0']?>" />
-                <button class="btn btn-danger" onclick="return confirma('<?php echo $produto['2']?>')">Excluir</button></form></td>
+                <button><img src="../IMG/excl.png" class="edit" onclick="return confirma('<?php echo $produto['2']?>')"></button></form></td>
         </tr>
 
 <?php
