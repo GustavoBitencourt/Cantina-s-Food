@@ -69,7 +69,7 @@
                             <div class="card-top"></div>
                      <div class="card-botton">
                             <p>Cadastre-se</p>
-                            <div class="img"><img src="IMG/confirm.png"></div>
+                            <div class="img"><!-- <img src="IMG/confirm.png"> --></div>
                         </div>
                     </div>
                 </div>
@@ -97,7 +97,7 @@
 }
 
 
-if (window.innerWidth > 450) {
+if (window.innerWidth > 950) {
     alert("Para visualizar, utilize um dispositivo mobile, ou abra em modo desenvolvedor (F12) e logo após ative o modo mobile Ctrl+Shift+M .");
 }
 
