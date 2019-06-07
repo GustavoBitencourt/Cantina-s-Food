@@ -30,6 +30,15 @@ require_once("conecta.php");
 			$enviar=mysqli_query($conn, $comando);
 			
 		}
+
+		if(!empty($_GET['quantidade'])){
+			$quantidade=$_GET['quantidade'];
+			
+		
+			$comando="UPDATE produtos SET quantidade='$quantidade' WHERE cd_produto=$produto";
+			$enviar=mysqli_query($conn, $comando);
+			
+		}
 		if($enviar>0) {
 				$_SESSION['mensagem']="Alterado com sucesso";
 				header("location:listaDeProdutos.php");

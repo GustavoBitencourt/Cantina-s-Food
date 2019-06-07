@@ -63,9 +63,9 @@
                 Descrição do Produto:
                 <input type="text" class="input"  name="descricao" id="descricao"><br><br>
                 Valor do Produto:
-                <input type="text" class="input"  name="valor" id="valor"><br><br>
+                <input type="text" class="input3"  name="valor" id="valor">
                 Quantidade:
-                <input type="text" class="input"  name="quantidade" id="quantidade"><br><br>
+                <input type="number" class="input3"  name="quantidade" id="quantidade"><br><br>
                 Foto:
                 <form action="executaUpload.php" method="POST"  enctype="multipart/form-data">
                 <input type="hidden" name="MAX_FILE_SIZE" value="200000">
