@@ -5,6 +5,7 @@
 session_start();
 require_once("conecta.php");
 require_once("cabecalho.php");
+require_once("funcoes.php");
 ?>
 
 <body>
@@ -15,7 +16,7 @@ require_once("cabecalho.php");
 			<article id="iten1">
                 <div class="none"></div>
                 <div class="titleArticle">
-    <p><a href="#">Cafés</a></p>
+    <p><a href="../script.js/?produto=<?php echo $produto['0'];?>" onclick="modalVenda('modal-form',<?php echo $produto['0'];?>)" class="abremodal">Cafés</a></p>
                 </div>
             </article>
 
@@ -107,13 +108,13 @@ require_once("cabecalho.php");
             <br><br>
             <td><form action=# method="get">
                 <input type="hidden" name="id" value="<?php echo $produto['0']?>" />
-                <button class="btn btn-danger">Cancelar Pedido</button></form></td>
+                <button class="btn btn-danger" onclick='cancelar(<?php echo $produto['0']?>)'>Cancelar Pedido</button></form></td>
             <td><form action=# method="get">
                 <input type="hidden" name="id" value="<?php echo $produto['0']?>" />
-                <button class="btn btn-danger">Voltar</button></form></td>
+                <button class="btn btn-danger" onclick='voltar(<?php echo $produto['0']?>)'>Voltar</button></form></td>
             <td><form action=# method="get">
                 <input type="hidden" name="id" value="<?php echo $produto['0']?>" />
-                <button class="btn btn-danger">Finalizar pedido</button></form></td>
+                <button class="btn btn-danger" onclick='finalizar(<?php echo $produto['0']?>)'>Finalizar pedido</button></form></td>
                 <input type="text" name="Valor total" placeholder="Valor total">
 		</form>
 
