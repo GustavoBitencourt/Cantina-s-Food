@@ -1,3 +1,7 @@
 function cadastrar(){
 	
 }
+
+function modalVenda{
+	
+}
