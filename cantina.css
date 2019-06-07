@@ -348,6 +348,24 @@ a {
     border-color: red;
 }
 
+.input3{
+    font-family: "Lato", monospace;
+    font-size: 1.125em;
+    line-height: 1.66667em;
+    color: black;
+    width: 60px;
+    padding: 0 5px;
+    height: 40px;
+    border: 2px solid #FFB400;
+    background: transparent;
+    margin-bottom: 1em
+}
+
+.input3:hover,.input3:focus{
+    outline: none;
+    border-color: red;
+}
+
 input.button{
     font-family: "Lato",monospace;
     font-size: 1.125em;

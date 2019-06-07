@@ -33,17 +33,17 @@
                 <div class="logBlock"><div class="textuser">Cadastro</div></div>
             </a><div class="linha"></div>
 
-                <form action="#" method="post" name="formulario" accept-charset="utf-8"> 
+                <form action="cadastrarCliente.php" method="post" name="formulario" accept-charset="utf-8"> 
                     <img src="IMG/email.png" class="icon01"> Email<br>
-                <input type="text" name="email" class=""><br>
+                <input type="email" name="email" class=""><br>
                     <img src="IMG/nome.png" class="icon3"> Nome<br>
-                <input type="text" name="email" class=""><br>
+                <input type="text" name="nome" class=""><br>
                     <img src="IMG/matric.png" class="icon3"> Matrícula ou SIAPE<br>
-                <input type="text" name="email" class=""><br>   
+                <input type="text" name="id" class=""><br>   
                     <img src="IMG/lock.png" class="icon3"> Senha<br>
                 <input type="password" name="senha" class=""><br>
                     <img src="IMG/lock.png" class="icon3"> Repetir Senha<br>
-                <input type="password" name="senha" class=""><br>
+                <input type="password" name="" class=""><br>
                 <input type="submit" name="enviar" class="botaoenviar" value="Cadastrar">
                 </form>
             
