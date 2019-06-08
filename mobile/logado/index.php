@@ -1,7 +1,13 @@
 <?php
+    
+    session_start();
+    require_once("conecta.php");
 
+    $comando="SELECT * FROM clientes";
+    $enviar=mysqli_query($conn, $comando);
+    
+ ?>
 
-?>
 <!DOCTYPE html>
 <html>
 
@@ -27,10 +33,32 @@
             </div>
         </nav>
 
+
+
+
          <div id="menu" class="menu">
         <div class="container">
             <a id="avatar" href="#">
-                <div class="logBlock"><div class="textuser">UsuárioAbu</div></div>
+                
+                <?php
+   if (mysqli_num_rows($enviar)>0) :
+        while($dado = mysqli_fetch_array($enviar)):
+     ?>
+                <img src="../imgPerfil/<?php echo $dado['imagem'];?>" class="logBlock">
+                <div class="textuser"><?php echo $dado['nome'];?></div>
+                <?php 
+                endwhile;
+                else: ?>
+                    <img src="../imgPerfil/user.png" class="logBlock">
+                    <?php 
+                endif;
+               ?>
+
+                    
+
+
+
+
             </a><div class="linha"></div>
             <a href="pedidos.php" style="margin-top: 30px;"><img src="../IMG/config.png" id="icon">Pedidos</a>
             <a href="Configurações.php" style="margin-top: 10px;"><img src="../IMG/pedidos.png" id="icon">Configurações</a>
@@ -39,8 +67,7 @@
         </div>
     </div>
 
-
-
+<H1>VOCÊ ESTÁ LOGADO</H1>
 
 
 </html>
@@ -63,5 +90,4 @@
 if (window.innerWidth > 450) {
     alert("Para visualizar, utilize um dispositivo mobile, ou abra em modo desenvolvedor (F12) e logo após ative o modo mobile Ctrl+Shift+M .");
 }
-
 </script>

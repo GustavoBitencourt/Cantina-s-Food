@@ -33,7 +33,7 @@
                 <div class="logBlock"><div class="textuser">Cadastro</div></div>
             </a><div class="linha"></div>
 
-                <form action="cadastrarCliente.php" method="post" name="formulario" accept-charset="utf-8"> 
+                <form action="cadastrarCliente.php" method="get" name="formulario" accept-charset="utf-8"> 
                     <img src="IMG/email.png" class="icon01"> Email<br>
                 <input type="email" name="email" class=""><br>
                     <img src="IMG/nome.png" class="icon3"> Nome<br>
@@ -42,11 +42,17 @@
                 <input type="text" name="id" class=""><br>   
                     <img src="IMG/lock.png" class="icon3"> Senha<br>
                 <input type="password" name="senha" class=""><br>
-                    <img src="IMG/lock.png" class="icon3"> Repetir Senha<br>
-                <input type="password" name="" class=""><br>
+                    <!-- <img src="IMG/lock.png" class="icon3"> Repetir Senha<br>
+                <input type="password" name="" class=""><br> -->
+                
+
+                <form action="executaUpload.php" method="POST"  enctype="multipart/form-data">
+                <input type="hidden" name="MAX_FILE_SIZE" value="200000">
+                Imagem Perfil:<input type="file" name="imagem" placeholder="Imagem">
+
                 <input type="submit" name="enviar" class="botaoenviar" value="Cadastrar">
                 </form>
-            
+            </form>
         </div>
     </div>
 <body>
@@ -54,7 +60,7 @@
             <div class="title">BEM VINDO</div>
 
 
-                <form action="#" method="post" name="formulario" accept-charset="utf-8"> 
+                <form action="logar.php" method="post" name="formulario" accept-charset="utf-8"> 
                 <img src="IMG/email.png" class="icon"> Email<br>
                 <input type="text" name="email" class=""><br> 
                 <img src="IMG/lock.png" class="icon2"> Senha<br>
