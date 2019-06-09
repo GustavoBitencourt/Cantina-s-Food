@@ -67,7 +67,15 @@
         </div>
     </div>
 
-<H1>VOCÊ ESTÁ LOGADO</H1>
+<div class="opcoesmenu">
+    <div class="opcoes">
+        <div class="opcao1" id="opcao"><img src="IMG/ped.png"><a>Realizar Pedido</a></div>
+        <div class="opcao2" id="opcao"><img src="IMG/pag.png"><a>Pagamentos</a></div>
+        <div class="opcao3" id="opcao"><img src="IMG/historic.png"><a>Histórico de Pedidos</a></div>
+        <div class="opcao4" id="opcao"><img src="IMG/close.png"><a>Cancelar Pedidos</a></div>
+
+    </div>
+</div>
 
 
 </html>
