@@ -60,8 +60,8 @@
 
 
             </a><div class="linha"></div>
-            <a href="pedidos.php" style="margin-top: 30px;"><img src="../IMG/config.png" id="icon">Pedidos</a>
-            <a href="Configurações.php" style="margin-top: 10px;"><img src="../IMG/pedidos.png" id="icon">Configurações</a>
+            <a href="#" style="margin-top: 30px;"><img src="../IMG/config.png" id="icon">Pedidos</a>
+            <a href="#" style="margin-top: 10px;"><img src="../IMG/pedidos.png" id="icon">Configurações</a>
             <a href="logout.php" style="margin-top: 10px;"><img src="../IMG/logout.png" id="icon">Logout</a>
             
         </div>
@@ -70,7 +70,7 @@
 <div class="opcoesmenu">
     <div class="opcoes">
         <div class="opcao1" id="opcao"><img src="IMG/ped.png"><a>Realizar Pedido</a></div>
-        <div class="opcao2" id="opcao"><img src="IMG/pag.png"><a>Pagamentos</a></div>
+        <div class="opcao2" id="opcao"><img src="IMG/pag.png"><a>Pagamentos Pendentes</a></div>
         <div class="opcao3" id="opcao"><img src="IMG/historic.png"><a>Histórico de Pedidos</a></div>
         <div class="opcao4" id="opcao"><img src="IMG/close.png"><a>Cancelar Pedidos</a></div>
 
