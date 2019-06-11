@@ -9,13 +9,14 @@
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" media="screen" href="../cantina.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script type="../script.js"></script>
 </head>
 <body>
 	<!-- 01 HEADER -->
         <header class="menu-bg">
         <div class="menu">
             <div class="menu-logo">
-                <a href="index.php">Projeto CantIF</a>
+                <a href="vendas.php">Projeto CantIF</a>
             </div>
             <nav class="menu-nav">
                 <ul>
@@ -23,7 +24,7 @@
                     <li><a href="#">Opção2</a></li>
                     <li><a href="#">Opção3</a></li> -->
                     <li><a href="perfil.php"><?php echo $_SESSION['nome'];?></a></li>
-                    <img src="../IMG/logo.png" class="titleimg">
+                    <li><a href="index.php"><img src="../IMG/logo.png" class="titleimg"></a></li>
                     <li><a href="../logout.php">Sair</a></li>
                 </ul>
             </nav>

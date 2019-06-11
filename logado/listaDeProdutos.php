@@ -43,12 +43,17 @@
                 <button><img src="../IMG/excl.png" class="edit" onclick="return confirma('<?php echo $produto['2']?>')"></button></form></td>
         </tr>
 
+
 <?php
     endforeach;
 ?>
 
     </table>
 
+    <div class="CssCadastrar">
+    <button href="index.php">Cadastrar Produto</button>   
+    </div>
+            
 <?php
 }
 ?>
@@ -77,6 +82,8 @@
         </form>
         </div>
     </div>
+
+            
 
 <script>
     function iniciaModal(modalID,id) {
