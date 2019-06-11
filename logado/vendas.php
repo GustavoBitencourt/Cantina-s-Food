@@ -5,7 +5,7 @@
 session_start();
 require_once("conecta.php");
 require_once("cabecalho.php");
-require_once("funcoes.php");
+
 ?>
 
 <body>
@@ -100,12 +100,20 @@ require_once("funcoes.php");
     </div>
 
 <!-- CONCLUSÃO VENDAS -->
-	<div class="barra-vendas">
+	<div  class="barra-vendas">
 		<form>
-			<input type="text" name="codigo" placeholder="Código" class="codigo">
-			<input type="text" name="Descrição" placeholder="Descrição do Produto Clicado">
-			<input type="text" name="Valor" placeholder="Valor do Produto">
+        <div id='container'>
+        <div id="produto" >
+			<input type="text" name="cd_produto[]" placeholder="Código" id="0" onchange="requisitar(this.value,this.id)" class="codigo">
+			<input type="text" name="nomeDoProduto" id="nomeDoProduto0" placeholder="Nome do Produto Clicado">
+			<input type="text" name="valor" id="valor0" placeholder="Valor do Produto">
+            
+            <input type="button" name="adicionar" id="remover" value="-" onclick="remove(event)">
             <br><br>
+        
+        </div>
+         </div>
+         <input type="button" name="adicionar" id="adicionar" value="+" onclick="adiciona()">
             <td><form action=# method="get">
                 <input type="hidden" name="id" value="<?php echo $produto['0']?>" />
                 <button class="btn btn-danger" onclick='cancelar(<?php echo $produto['0']?>)'>Cancelar Pedido</button></form></td>
@@ -115,10 +123,111 @@ require_once("funcoes.php");
             <td><form action=# method="get">
                 <input type="hidden" name="id" value="<?php echo $produto['0']?>" />
                 <button class="btn btn-danger" onclick='finalizar(<?php echo $produto['0']?>)'>Finalizar pedido</button></form></td>
-                <input type="text" name="Valor total" placeholder="Valor total">
+                <input type="text" name="valor_total" id="valor_total" value="0" placeholder="Valor total">
 		</form>
 
 	</div>
+
+
+<script>
+    document.querySelector('#remover').style.visibility = 'hidden'
+    function iniciaModal(modalID,id) {
+        requisitar(id);
+               const modal = document.getElementById(modalID);
+                if(modal) {
+                    modal.classList.add('mostrar');
+                    modal.addEventListener('click', (e) => {
+                        if(e.target.id == modalID || e.target.className == 'fechar') {
+                            modal.classList.remove('mostrar');
+                        }
+                    });
+                }
+            }
+        
+       // const mod = document.querySelector('.abremodal');
+       // mod.addEventListener('click', () => iniciaModal('modal-form'));
+
+function inicializaAjax() {
+ var ajax
+ if (window.XMLHttpRequest) {
+ ajax= new XMLHttpRequest();
+ } else if (window.ActiveXObject) {
+ ajax=new ActiveXObject("Msxml2.XMLHTTP");
+ if (!ajax) {
+ ajax=new ActiveXObject("Microsoft.XMLHTTP");
+ }
+ } else {
+ alert ("Seu navegador não suporta esta aplicação");
+ }
+ return ajax;
+}
+function requisitar(id,num){
+var requisicaoAjax = inicializaAjax();
+if (requisicaoAjax) {
+ requisicaoAjax.onreadystatechange = function() {
+ if (requisicaoAjax.readyState == 4) {
+ if (requisicaoAjax.status==200) {
+ 
+ if (requisicaoAjax.responseText) {
+    dadosJSON = JSON.parse(requisicaoAjax.responseText);
+    document.getElementById('nomeDoProduto'+num).value=dadosJSON.nomeDoProduto;  
+    document.getElementById('valor'+num).value=dadosJSON.valor;
+    document.getElementById('valor_total').value=parseInt(document.getElementById('valor_total').value)+parseInt(document.getElementById('valor'+num).value);
+    // document.getElementById('cd_produto').value=dadosJSON.cd_produto;    
+    // document.getElementById('quantidade').value=dadosJSON.quantidade;
+ } else {
+alert("Problema na conexão do banco");
+ }
+ } else {
+ alert("Problema na Comunicação");
+ }
+ }
+ };
+}
+requisicaoAjax.open("GET", "busca_produto.php?id="+id);
+requisicaoAjax.send(null);
+}
+function confirma(id){
+    var resp=confirm('Deseja excluir o produto '+id+'?');
+    if(resp==false)
+    {
+        return false;
+
+    }
+    else
+    {
+        return true;
+    }
+}
+
+
+function adiciona()
+{
+
+const clone = document.querySelector('#produto').cloneNode(true);
+clone.children[0].setAttribute('id', document.querySelector('#container').children.length)
+clone.children[1].setAttribute('id', 'nomeDoProduto'+document.querySelector('#container').children.length)
+clone.children[2].setAttribute('id', 'valor'+document.querySelector('#container').children.length)
+clone.children[3].setAttribute('id','remover'+document.querySelector('#container').children.length)
+clone.setAttribute('id', 'produto' + document.querySelector('#container').children.length)
+document.querySelector('#container').appendChild(clone);
+document.getElementById('0').value="";
+document.getElementById('nomeDoProduto0').value="";
+document.getElementById('valor0').value="";
+clone.children[3].style.visibility = 'visible'
+
+    
+}
+
+function remove(event) {
+
+    document.getElementById('valor_total').value = document.getElementById('valor_total').value - event.target.parentNode.children[2].value
+   
+
+    event.target.parentNode.style.display = "none"
+}
+
+</script>
 
 </body>
 </html>
