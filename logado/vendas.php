@@ -105,25 +105,26 @@ require_once("cabecalho.php");
         <div id='container'>
         <div id="produto" >
 			<input type="text" name="cd_produto[]" placeholder="Código" id="0" onchange="requisitar(this.value,this.id)" class="codigo">
-			<input type="text" name="nomeDoProduto" id="nomeDoProduto0" placeholder="Nome do Produto Clicado">
-			<input type="text" name="valor" id="valor0" placeholder="Valor do Produto">
+			<input type="text" readonly="true" name="nomeDoProduto" id="nomeDoProduto0" placeholder="Nome do Produto Clicado" class="nomeDoProduto">
+			<input type="text" readonly="true" name="valor" id="valor0" placeholder="Valor do Produto" class="valor">
             
-            <input type="button" name="adicionar" id="remover" value="-" onclick="remove(event)">
+            <img src="../IMG/menos.png" type="button" name="adicionar" id="remover" value="-" onclick="remove(event)" class="remover">
             <br><br>
-        
         </div>
+        <img src="../IMG/add.png" type="submit" name="" name="adicionar" id="adicionar"  onclick="adiciona()" class="adicionar"><br>
+
+        <td><form action=# method="get">
+                <input type="hidden" name="id" value="<?php echo $produto['0']?>" />
+                <button class="cancelar" onclick='cancelar(<?php echo $produto['0']?>)'>Cancelar Pedido</button></form></td>
+            
+            <td><form action=# method="get">
+                <input type="hidden" name="finalizar" value="Finalizar Pedido">
+                <button class="finalizar" onclick='finalizar(<?php echo $produto['0']?>)'>Finalizar pedido</button></form></td>
+               
+                <input readonly="true" type="text" name="valor_total" id="valor_total" class="valorTotal" value="0" placeholder="Valor total">
          </div>
-         <input type="button" name="adicionar" id="adicionar" value="+" onclick="adiciona()">
-            <td><form action=# method="get">
-                <input type="hidden" name="id" value="<?php echo $produto['0']?>" />
-                <button class="btn btn-danger" onclick='cancelar(<?php echo $produto['0']?>)'>Cancelar Pedido</button></form></td>
-            <td><form action=# method="get">
-                <input type="hidden" name="id" value="<?php echo $produto['0']?>" />
-                <button class="btn btn-danger" onclick='voltar(<?php echo $produto['0']?>)'>Voltar</button></form></td>
-            <td><form action=# method="get">
-                <input type="hidden" name="id" value="<?php echo $produto['0']?>" />
-                <button class="btn btn-danger" onclick='finalizar(<?php echo $produto['0']?>)'>Finalizar pedido</button></form></td>
-                <input type="text" name="valor_total" id="valor_total" value="0" placeholder="Valor total">
+         
+           
 		</form>
 
 	</div>
