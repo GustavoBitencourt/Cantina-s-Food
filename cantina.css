@@ -784,6 +784,8 @@ h1 {
     position: fixed;
     margin-left: 75%;
     margin-top: 6%;
+    cursor: pointer;
+    color: black;
 }
 
 
