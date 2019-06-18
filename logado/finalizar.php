@@ -1,31 +1,37 @@
-    
 <?php
 session_start();
 require_once "conecta.php";
 
 
-if(isset($_POST['finalizar'])) {
-	if (!empty($_POST['valor_total'])) {
-		$valorTotal=$_POST['valor_total'];
+if(isset($_GET['finalizar'])) {
+	if (!empty($_GET['valor_total'])) {
+		$valorTotal=$_GET['valor_total'];
 		$dataAtual= date('Y-m-d');
-
-		$comando="INSERT INTO pedido (valor_total, data) VALUES ('$valorTotal', '$dataAtual')";
+		$comando="INSERT INTO pedidos (valor_total, data) VALUES ('$valorTotal', '$dataAtual')";
 		$enviar=mysqli_query($conn, $comando);
 		
 		
-
-
-
-
-
-
+	if($enviar) {                                      
+				$_SESSION['mensagem']="Cadastrado com sucesso";
+				header("location:vendas.php");                 
+				exit;                                           
+			}else{
+				$_SESSION['mensagem']="Erro ao cadastrar"; 
+				header("location:cadastroUsuario.php"); 
+				exit; 
+			}   
+		}else{
+			$_SESSION['mensagem']="Algum dos campos ficou em branco"; 
+				header("location:cadastroUsuario.php"); 
+				exit; 
+		}
+	}else{
+		header("location:index.php"); 
+				exit; 
+	}
 	
-	
-	$Enviar = mysql_insert_id($sqlRealizarPedido);
 ?>			
-	<script>alert("Pedido Realizado com Sucesso")</script>;
+	
 			
 			
 }
-
-

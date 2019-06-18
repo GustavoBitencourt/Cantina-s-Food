@@ -230,6 +230,12 @@ a {
     align-items: center;
 }
 
+a:hover {
+    
+    text-decoration: underline;
+
+}
+
 .modal-container {
     width: 100vw;
     height: 100vh;
@@ -451,31 +457,25 @@ input.button:hover{
     transition: .3s
 }
 
-.button3 {
-    float: right;
-    border-radius: 1px;
-    font-family: "Lato",monospace;
-    font-size: 1.125em;
-    line-height: 1.5em;
-    cursor: pointer;
-    color: black;
-    border: 2px solid grey;
-    background: transparent;
-    display: block;
-    width: 150px;
-    margin-top: 0px;
-   /* padding-top: 5px;*/
-    -webkit-box-shadow: 3px 3px 0 -2px white,3px 3px 0 0 grey;
-    -moz-box-shadow: 3px 3px 0 -2px white,3px 3px 0 0 grey;
-    box-shadow: 3px 3px 0 -2px white,3px 3px 0 0 grey;
-    transition: .3s
+.esqsenha {
+    margin-top: 12px;
+    text-align: center;
+    color: #007bff;
+
 }
+
+.esqsenha:hover {
+    color: blue;
+    text-decoration: underline;
+
+  }  
 
 .button2:hover {
     -webkit-box-shadow: 3px 3px 0 -2px grey,3px 3px 0 0 black;
     -moz-box-shadow: 3px 3px 0 -2px grey,3px 3px 0 0 black;
     box-shadow: 3px 3px 0 -2px grey,3px 3px 0 0 black;
 }
+
 
 h1 {
     text-align: center;

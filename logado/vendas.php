@@ -11,9 +11,9 @@ require_once("cabecalho.php");
 <body>
 
 <div class="menu-itens">
-	<div class="articles" >
-			<!--ARTICLE 1-->
-			<article id="iten1">
+    <div class="articles" >
+            <!--ARTICLE 1-->
+            <article id="iten1">
                 <div class="none"></div>
                 <div class="titleArticle">
     <p><a href="../script.js/?produto=<?php echo $produto['0'];?>" onclick="modalVenda('modal-form',<?php echo $produto['0'];?>)" class="abremodal">Cafés</a></p>
@@ -55,7 +55,7 @@ require_once("cabecalho.php");
 </div>
 
 <div class="menu-itens2">
-	<div class="articles">
+    <div class="articles">
             <!--ARTICLE 6-->
             <article id="iten6">
                 <div class="none"></div>
@@ -100,32 +100,32 @@ require_once("cabecalho.php");
     </div>
 
 <!-- CONCLUSÃO VENDAS -->
-	<div  class="barra-vendas">
-		<form>
+    <div  class="barra-vendas">
+     
         <div id='container'>
         <div id="produto" >
-			<input type="text" name="cd_produto[]" placeholder="Código" id="0" onchange="requisitar(this.value,this.id)" class="codigo">
-			<input type="text" readonly="true" name="nomeDoProduto" id="nomeDoProduto0" placeholder="Nome do Produto Clicado" class="nomeDoProduto">
-			<input type="text" readonly="true" name="valor" id="valor0" placeholder="Valor do Produto" class="valor">
+            <input type="text" name="cd_produto[]" placeholder="Código" id="0" onchange="requisitar(this.value,this.id)" class="codigo">
+            <input type="text" readonly="true" name="nomeDoProduto" id="nomeDoProduto0" placeholder="Nome do Produto Clicado" class="nomeDoProduto">
+            <input type="text" readonly="true" name="valor" id="valor0" placeholder="Valor do Produto" class="valor">
             
             <img src="../IMG/menos.png" type="button" name="adicionar" id="remover" value="-" onclick="remove(event)" class="remover">
          
         </div>
-        <img src="../IMG/add.png" type="submit" name="" name="adicionar" id="adicionar"  onclick="adiciona()" class="adicionar">
+        <img src="../IMG/add.png" type="submit" name="mais" name="adicionar" id="adicionar"  onclick="adiciona()" class="adicionar">
 
-        <<td><a href="vendas.php" class="cancelar">Cancelar Pedido</a></td>
+        <td><a href="vendas.php" class="cancelar">Cancelar Pedido</a></td>
             
-             <td><form action="finalizar.php" method="post">
-                <input readonly="true" type="text" name="valor_total" id="valor_total" class="valorTotal" value="0">
+             <td><form action="finalizar.php" method="get">
+                <input  type="text" name="valor_total" id="valor_total" class="valorTotal" value="0">
                 <input type="submit" class="finalizar" name="finalizar" value="Finalizar Pedido">              
                
                
-                 </form></td>></div>
+                 </form></td></div>
          
            
-		</form>
+        </form>
 
-	</div>
+    </div>
 
 
 <script>
@@ -145,7 +145,6 @@ require_once("cabecalho.php");
         
        // const mod = document.querySelector('.abremodal');
        // mod.addEventListener('click', () => iniciaModal('modal-form'));
-
 function inicializaAjax() {
  var ajax
  if (window.XMLHttpRequest) {
@@ -191,18 +190,14 @@ function confirma(id){
     if(resp==false)
     {
         return false;
-
     }
     else
     {
         return true;
     }
 }
-
-
 function adiciona()
 {
-
 const clone = document.querySelector('#produto').cloneNode(true);
 clone.children[0].setAttribute('id', document.querySelector('#container').children.length)
 clone.children[1].setAttribute('id', 'nomeDoProduto'+document.querySelector('#container').children.length)
@@ -214,18 +209,13 @@ document.getElementById('0').value="";
 document.getElementById('nomeDoProduto0').value="";
 document.getElementById('valor0').value="";
 clone.children[3].style.visibility = 'visible'
-
     
 }
-
 function remove(event) {
-
     document.getElementById('valor_total').value = document.getElementById('valor_total').value - event.target.parentNode.children[2].value
    
-
     event.target.parentNode.style.display = "none"
 }
-
 </script>
 
 </body>
