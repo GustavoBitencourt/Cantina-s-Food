@@ -115,12 +115,12 @@ require_once("cabecalho.php");
 
         <<td><a href="vendas.php" class="cancelar">Cancelar Pedido</a></td>
             
-            <td><form action="finalizar.php" method="post">
+             <td><form action="finalizar.php" method="post">
                 <input readonly="true" type="text" name="valor_total" id="valor_total" class="valorTotal" value="0">
                 <input type="submit" class="finalizar" name="finalizar" value="Finalizar Pedido">              
                
                
-                 </form></td></div>
+                 </form></td>></div>
          
            
 		</form>
