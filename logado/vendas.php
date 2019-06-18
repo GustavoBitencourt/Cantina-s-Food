@@ -109,13 +109,11 @@ require_once("cabecalho.php");
 			<input type="text" readonly="true" name="valor" id="valor0" placeholder="Valor do Produto" class="valor">
             
             <img src="../IMG/menos.png" type="button" name="adicionar" id="remover" value="-" onclick="remove(event)" class="remover">
-            <br><br>
+         
         </div>
-        <img src="../IMG/add.png" type="submit" name="" name="adicionar" id="adicionar"  onclick="adiciona()" class="adicionar"><br>
+        <img src="../IMG/add.png" type="submit" name="" name="adicionar" id="adicionar"  onclick="adiciona()" class="adicionar">
 
-        <td><form action=# method="get">
-                <input type="hidden" name="id" value="<?php echo $produto['0']?>" />
-                <button class="cancelar" onclick='cancelar(<?php echo $produto['0']?>)'>Cancelar Pedido</button></form></td>
+        <td><a href="vendas.php" class="cancelar">Cancelar Pedido</a></td>
             
             <td><form action="finalizar.php" method="post">
                 <input type="submit" class="finalizar" name="finalizar" value="Finalizar Pedido">
