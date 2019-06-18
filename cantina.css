@@ -744,6 +744,7 @@ h1 {
 .remover{
     width: 20px;
     height: 20px;
+    cursor: pointer;
 }
 
 .valorTotal {
@@ -770,6 +771,7 @@ h1 {
     position: fixed;
     margin-left: 75%;
     margin-top: 2%;
+    cursor: pointer;
 }
 
 .cancelar {
