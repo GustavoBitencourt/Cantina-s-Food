@@ -113,14 +113,14 @@ require_once("cabecalho.php");
         </div>
         <img src="../IMG/add.png" type="submit" name="" name="adicionar" id="adicionar"  onclick="adiciona()" class="adicionar">
 
-        <td><a href="vendas.php" class="cancelar">Cancelar Pedido</a></td>
+        <<td><a href="vendas.php" class="cancelar">Cancelar Pedido</a></td>
             
             <td><form action="finalizar.php" method="post">
-                <input type="submit" class="finalizar" name="finalizar" value="Finalizar Pedido">
-                </form></td>
+                <input readonly="true" type="text" name="valor_total" id="valor_total" class="valorTotal" value="0">
+                <input type="submit" class="finalizar" name="finalizar" value="Finalizar Pedido">              
                
-                <input readonly="true" type="text" name="valor_total" id="valor_total" class="valorTotal" value="0" placeholder="Valor total">
-         </div>
+               
+                 </form></td></div>
          
            
 		</form>
