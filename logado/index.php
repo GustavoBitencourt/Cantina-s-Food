@@ -69,7 +69,7 @@ if(!isset($_SESSION['nome'])){
                 <br><input type="text" name="nomeDoProduto" class="input" placeholder="Nome do Produto"><br><br>
                 <input type="text" class="input"  name="descricao" placeholder="Descrição do Produto"><br><br>
                 <input type="text" class="input"  name="valor" placeholder="Valor do Produto"><br><br>
-                <input type="text" class="input"  name="quantidade" placeholder="Quantidade inicial disponível"><br><br>
+               <!--  <input type="text" class="input"  name="quantidade" placeholder="Quantidade inicial disponível"><br><br> -->
                 <form action="executaUpload.php" method="POST"  enctype="multipart/form-data">
                 <input type="hidden" name="MAX_FILE_SIZE" value="200000">
                 Foto:<input type="file" name="imagem" placeholder="Imagem">
