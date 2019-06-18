@@ -117,9 +117,9 @@ require_once("cabecalho.php");
                 <input type="hidden" name="id" value="<?php echo $produto['0']?>" />
                 <button class="cancelar" onclick='cancelar(<?php echo $produto['0']?>)'>Cancelar Pedido</button></form></td>
             
-            <td><form action=# method="get">
-                <input type="hidden" name="finalizar" value="Finalizar Pedido">
-                <button class="finalizar" onclick='finalizar(<?php echo $produto['0']?>)'>Finalizar pedido</button></form></td>
+            <td><form action="finalizar.php" method="post">
+                <input type="submit" class="finalizar" name="finalizar" value="Finalizar Pedido">
+                </form></td>
                
                 <input readonly="true" type="text" name="valor_total" id="valor_total" class="valorTotal" value="0" placeholder="Valor total">
          </div>
