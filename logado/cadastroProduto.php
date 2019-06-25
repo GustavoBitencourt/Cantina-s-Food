@@ -8,7 +8,8 @@ if(isset($_GET['cadastrar'])) {
 			$nomeDoProduto=$_GET['nomeDoProduto'];
 			$imagem=$_GET['imagem'];
 			$descricao=$_GET['descricao'];
-			$comando="INSERT INTO produtos(valor, nomeDoProduto, imagem, descricao) VALUES ('$valor', '$nomeDoProduto', '$imagem', '$descricao')";
+			$categoria=$_GET['categoria'];
+			$comando="INSERT INTO produtos(valor, nomeDoProduto, imagem, descricao, categoria) VALUES ('$valor', '$nomeDoProduto', '$imagem', '$descricao', '$categoria')";
 			
 			$enviar=mysqli_query($conn, $comando);
 

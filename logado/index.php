@@ -68,7 +68,16 @@ if(!isset($_SESSION['nome'])){
             <form action="cadastroProduto.php" method="get">
                 <br><input type="text" name="nomeDoProduto" class="input" placeholder="Nome do Produto"><br><br>
                 <input type="text" class="input"  name="descricao" placeholder="Descrição do Produto"><br><br>
+               
+
                 <input type="text" class="input"  name="valor" placeholder="Valor do Produto"><br><br>
+                Categoria:
+                <select name="categoria">
+                    <option value="cafe">Cafés</option>
+                    <option value="bebidas">Bebidas</option>
+                    <option value="salgados">Salgados</option>
+                    <option value="bigSalgados">Big Salgados</option>
+                </select>
                <!--  <input type="text" class="input"  name="quantidade" placeholder="Quantidade inicial disponível"><br><br> -->
                 <form action="executaUpload.php" method="POST"  enctype="multipart/form-data">
                 <input type="hidden" name="MAX_FILE_SIZE" value="200000">

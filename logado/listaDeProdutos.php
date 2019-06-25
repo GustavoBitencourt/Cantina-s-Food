@@ -22,6 +22,7 @@
         <tr>
             <th>Nome do Produto</th>
             <th>Valor</th>
+            <th>Categoria</th>
             <th>Imagem ilustrativa</th>
             <th>Editar</th>
             <th>Excluir</th>
@@ -34,6 +35,8 @@
         <tr>
             <td><?php echo $produto['2'];?></td>
             <td><?php echo $produto['1'];?></td>
+            <td><?php echo $produto['6'];?></td>
+
             <td><img src="ImgProdutos/<?php echo $produto['3'];?>" class="imgprodutos"></td>
             <td><a href="#/?produto=<?php echo $produto['0'];?>" onclick="iniciaModal('modal-form',<?php echo $produto['0'];?>)" class="abremodal"><button><img src="../IMG/edit.png" class="edit"></button></td>
             <td><form action="excluiProduto.php" method="get">
@@ -67,6 +70,13 @@
                 <input type="text" class="input"  name="descricao" id="descricao"><br><br>
                 Valor do Produto:
                 <input type="text" class="input3"  name="valor" id="valor">
+                Categoria:
+                <select name="categoria">
+                    <option value="cafe">Cafés</option>
+                    <option value="bebidas">Bebidas</option>
+                    <option value="salgados">Salgados</option>
+                    <option value="bigSalgados">Big Salgados</option>
+                </select>
                 Foto:
                 <form action="executaUpload.php" method="POST"  enctype="multipart/form-data">
                 <input type="hidden" name="MAX_FILE_SIZE" value="200000">

@@ -11,12 +11,12 @@ require_once("cabecalho.php");
 <body>
 
 <div class="menu-itens">
-    <div class="articles" >
-            <!--ARTICLE 1-->
-            <article id="iten1">
+	<div class="articles" >
+			<!--ARTICLE 1-->
+			<article id="iten1">
                 <div class="none"></div>
                 <div class="titleArticle">
-    <p><a href="../script.js/?produto=<?php echo $produto['0'];?>" onclick="modalVenda('modal-form',<?php echo $produto['0'];?>)" class="abremodal">Cafés</a></p>
+    <p> <a href="#/?categoria=bebidas" onclick="iniciaModal('modal-form','bebidas')" class="abremodal"><button>Cafés</a></p>
                 </div>
             </article>
 
@@ -55,7 +55,7 @@ require_once("cabecalho.php");
 </div>
 
 <div class="menu-itens2">
-    <div class="articles">
+	<div class="articles">
             <!--ARTICLE 6-->
             <article id="iten6">
                 <div class="none"></div>
@@ -99,33 +99,40 @@ require_once("cabecalho.php");
         </div>
     </div>
 
+<div id="modal-form" class="modal-container">
+        <div class="modal">
+            <button class="fechar">x</button>
+
+        </div>
+    </div>
+
 <!-- CONCLUSÃO VENDAS -->
-    <div  class="barra-vendas">
-     
+	<div  class="barra-vendas">
+		<form>
         <div id='container'>
         <div id="produto" >
-            <input type="text" name="cd_produto[]" placeholder="Código" id="0" onchange="requisitar(this.value,this.id)" class="codigo">
-            <input type="text" readonly="true" name="nomeDoProduto" id="nomeDoProduto0" placeholder="Nome do Produto Clicado" class="nomeDoProduto">
-            <input type="text" readonly="true" name="valor" id="valor0" placeholder="Valor do Produto" class="valor">
+			<input type="text" name="cd_produto[]" placeholder="Código" id="0" onchange="requisitar(this.value,this.id)" class="codigo">
+			<input type="text" readonly="true" name="nomeDoProduto" id="nomeDoProduto0" placeholder="Nome do Produto Clicado" class="nomeDoProduto">
+			<input type="text" readonly="true" name="valor" id="valor0" placeholder="Valor do Produto" class="valor">
             
             <img src="../IMG/menos.png" type="button" name="adicionar" id="remover" value="-" onclick="remove(event)" class="remover">
          
         </div>
-        <img src="../IMG/add.png" type="submit" name="mais" name="adicionar" id="adicionar"  onclick="adiciona()" class="adicionar">
+        <img src="../IMG/add.png" type="submit" name="" name="adicionar" id="adicionar"  onclick="adiciona()" class="adicionar">
 
         <td><a href="vendas.php" class="cancelar">Cancelar Pedido</a></td>
             
-             <td><form action="finalizar.php" method="get">
-                <input  type="text" name="valor_total" id="valor_total" class="valorTotal" value="0">
-                <input type="submit" class="finalizar" name="finalizar" value="Finalizar Pedido">              
+            <td><form action="finalizar.php" method="get">
+                <input type="submit" class="finalizar" name="finalizar" value="Finalizar Pedido">
+                </form></td>
                
-               
-                 </form></td></div>
+                <input readonly="true" type="text" name="valor_total" id="valor_total" class="valorTotal" value="0" placeholder="Valor total">
+         </div>
          
            
-        </form>
+		</form>
 
-    </div>
+	</div>
 
 
 <script>
@@ -145,6 +152,7 @@ require_once("cabecalho.php");
         
        // const mod = document.querySelector('.abremodal');
        // mod.addEventListener('click', () => iniciaModal('modal-form'));
+
 function inicializaAjax() {
  var ajax
  if (window.XMLHttpRequest) {
@@ -190,14 +198,18 @@ function confirma(id){
     if(resp==false)
     {
         return false;
+
     }
     else
     {
         return true;
     }
 }
+
+
 function adiciona()
 {
+
 const clone = document.querySelector('#produto').cloneNode(true);
 clone.children[0].setAttribute('id', document.querySelector('#container').children.length)
 clone.children[1].setAttribute('id', 'nomeDoProduto'+document.querySelector('#container').children.length)
@@ -209,13 +221,97 @@ document.getElementById('0').value="";
 document.getElementById('nomeDoProduto0').value="";
 document.getElementById('valor0').value="";
 clone.children[3].style.visibility = 'visible'
+
     
 }
+function adiciona_outro(id, nome, valor)
+{
+const clone = document.querySelector('#produto').cloneNode(true);
+clone.children[0].setAttribute('id', document.querySelector('#container').children.length)
+clone.children[0].setAttribute('value', id)
+clone.children[1].setAttribute('id', 'nomeDoProduto'+document.querySelector('#container').children.length)
+clone.children[1].setAttribute('value', nome)
+clone.children[2].setAttribute('id', 'valor'+document.querySelector('#container').children.length)
+clone.children[2].setAttribute('value', valor)
+clone.children[3].setAttribute('id','remover'+document.querySelector('#container').children.length)
+clone.setAttribute('id', 'produto' + document.querySelector('#container').children.length)
+document.querySelector('#container').appendChild(clone);
+document.getElementById('valor_total').value=parseInt(document.getElementById('valor_total').value)+valor;
+document.getElementById('0').value="";
+document.getElementById('nomeDoProduto0').value="";
+document.getElementById('valor0').value="";
+clone.children[3].style.visibility = 'visible'
+
+    
+}
+
 function remove(event) {
+
     document.getElementById('valor_total').value = document.getElementById('valor_total').value - event.target.parentNode.children[2].value
    
+
     event.target.parentNode.style.display = "none"
 }
+
+
+ function iniciaModal(modalID,id) {
+
+        requisitar_cat(id);
+              const modal = document.getElementById(modalID);
+                if(modal) {
+                    modal.classList.add('mostrar');
+                    modal.addEventListener('click', (e) => {
+                        if(e.target.id == modalID || e.target.className == 'fechar') {
+                            modal.classList.remove('mostrar');
+                        }
+                    });
+                }
+            }
+        
+       const mod = document.querySelector('.abremodal');
+       mod.addEventListener('click', () => iniciaModal('modal-form'));
+
+function requisitar_cat(categoria){
+var requisicaoAjax = inicializaAjax();
+if (requisicaoAjax) {
+ requisicaoAjax.onreadystatechange = function() {
+ if (requisicaoAjax.readyState == 4) {
+ if (requisicaoAjax.status==200) {
+ 
+ if (requisicaoAjax.responseText) {
+    dados = requisicaoAjax.responseText;
+    document.getElementById('modal-form').innerHTML = dados
+
+    // document.getElementById('nomeDoProduto').value=dadosJSON.nomeDoProduto;
+    // document.getElementById('descricao').value=dadosJSON.descricao;
+    // document.getElementById('valor').value=dadosJSON.valor;
+    // document.getElementById('cd_produto').value=dadosJSON.cd_produto;    
+ } else {
+alert("Problema na conexão do banco");
+ }
+ } else {
+ alert("Problema na Comunicação");
+ }
+ }
+ };
+}
+requisicaoAjax.open("GET", "busca_prod_cat.php?categoria="+categoria);
+requisicaoAjax.send(null);
+}
+function confirma(id){
+    var resp=confirm('Deseja excluir o produto '+id+'?');
+    if(resp==false)
+    {
+        return false;
+
+    }
+    else
+    {
+        return true;
+    }
+}
+
+
 </script>
 
 </body>

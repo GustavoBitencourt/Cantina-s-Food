@@ -31,11 +31,11 @@ require_once("conecta.php");
 			
 		}
 
-		if(!empty($_GET['quantidade'])){
-			$quantidade=$_GET['quantidade'];
+		if(!empty($_GET['categoria'])){
+			$categoria=$_GET['categoria'];
 			
 		
-			$comando="UPDATE produtos SET quantidade='$quantidade' WHERE cd_produto=$produto";
+			$comando="UPDATE produtos SET categoria='$categoria' WHERE cd_produto=$produto";
 			$enviar=mysqli_query($conn, $comando);
 			
 		}
