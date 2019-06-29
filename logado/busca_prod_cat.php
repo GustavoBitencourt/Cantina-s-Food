@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" media="screen" href="form.css">
+
 <?php
 
 
@@ -17,10 +19,9 @@ $enviar=mysqli_query($conn, $comando);
         <tr>
             <th>Nome do Produto</th>
             <th>Valor</th>
-            <th>Categoria</th>
-            <th>Imagem ilustrativa</th>
-            <th>Editar</th>
-            <th>Excluir</th>
+            <th>Imagem</th>
+            <th>Selecionar</th>
+            
         </tr>
 
         <?php
@@ -28,15 +29,13 @@ $enviar=mysqli_query($conn, $comando);
     
 ?>
         <tr>
-            <td><?php echo $produto['2'];?></td>
-            <td><?php echo $produto['1'];?></td>
-            <td><?php echo $produto['6'];?></td>
+            <td class="nome"><?php echo $produto['2'];?></td>
+            <td class="preco"><?php echo $produto['1'];?></td>
+            
 
             <td><img src="ImgProdutos/<?php echo $produto['3'];?>" class="imgprodutos"></td>
-            <td><a href="#/?produto=<?php echo $produto['0'];?>"  onclick="adiciona_outro(<?php echo $produto['0'];?>,'<?php echo $produto['2'];?>',<?php echo $produto['1'];?>)"><button><img src="../IMG/edit.png" class="edit" ></button></td>
-            <td><form action="excluiProduto.php" method="get">
-                <input type="hidden" name="id" value="<?php echo $produto['0']?>" />
-                <button><img src="../IMG/excl.png" class="edit" onclick="return confirma('<?php echo $produto['2']?>')"></button></form></td>
+            <td><a href="#/?produto=<?php echo $produto['0'];?>"  onclick="adiciona_outro(<?php echo $produto['0'];?>,'<?php echo $produto['2'];?>',<?php echo $produto['1'];?>)"><button>Adicionar</button></td>
+            
         </tr>
 
 
