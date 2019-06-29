@@ -5,18 +5,17 @@
 session_start();
 require_once("conecta.php");
 require_once("cabecalho.php");
-
 ?>
 
 <body>
 
 <div class="menu-itens">
-	<div class="articles" >
-			<!--ARTICLE 1-->
-			<article id="iten1">
+    <div class="articles" >
+            <!--ARTICLE 1-->
+            <article id="iten1">
                 <div class="none"></div>
                 <div class="titleArticle">
-    <p> <a href="#/?categoria=bebidas" onclick="iniciaModal('modal-form','bebidas')" class="abremodal"><button>Cafés</a></p>
+    <p> <a href="#/?categoria=bebidas" onclick="iniciaModal('modal-form','cafe')" class="abremodal">Cafés</a></p>
                 </div>
             </article>
 
@@ -55,7 +54,7 @@ require_once("cabecalho.php");
 </div>
 
 <div class="menu-itens2">
-	<div class="articles">
+    <div class="articles">
             <!--ARTICLE 6-->
             <article id="iten6">
                 <div class="none"></div>
@@ -107,13 +106,13 @@ require_once("cabecalho.php");
     </div>
 
 <!-- CONCLUSÃO VENDAS -->
-	<div  class="barra-vendas">
-		<form>
+    <div  class="barra-vendas">
+        <form>
         <div id='container'>
         <div id="produto" >
-			<input type="text" name="cd_produto[]" placeholder="Código" id="0" onchange="requisitar(this.value,this.id)" class="codigo">
-			<input type="text" readonly="true" name="nomeDoProduto" id="nomeDoProduto0" placeholder="Nome do Produto Clicado" class="nomeDoProduto">
-			<input type="text" readonly="true" name="valor" id="valor0" placeholder="Valor do Produto" class="valor">
+            <input type="text" name="cd_produto[]" placeholder="Código" id="0" onchange="requisitar(this.value,this.id)" class="codigo">
+            <input type="text" readonly="true" name="nomeDoProduto" id="nomeDoProduto0" placeholder="Nome do Produto Clicado" class="nomeDoProduto">
+            <input type="text" readonly="true" name="valor" id="valor0" placeholder="Valor do Produto" class="valor">
             
             <img src="../IMG/menos.png" type="button" name="adicionar" id="remover" value="-" onclick="remove(event)" class="remover">
          
@@ -130,9 +129,9 @@ require_once("cabecalho.php");
          </div>
          
            
-		</form>
+        </form>
 
-	</div>
+    </div>
 
 
 <script>
@@ -152,7 +151,6 @@ require_once("cabecalho.php");
         
        // const mod = document.querySelector('.abremodal');
        // mod.addEventListener('click', () => iniciaModal('modal-form'));
-
 function inicializaAjax() {
  var ajax
  if (window.XMLHttpRequest) {
@@ -198,18 +196,14 @@ function confirma(id){
     if(resp==false)
     {
         return false;
-
     }
     else
     {
         return true;
     }
 }
-
-
 function adiciona()
 {
-
 const clone = document.querySelector('#produto').cloneNode(true);
 clone.children[0].setAttribute('id', document.querySelector('#container').children.length)
 clone.children[1].setAttribute('id', 'nomeDoProduto'+document.querySelector('#container').children.length)
@@ -221,7 +215,6 @@ document.getElementById('0').value="";
 document.getElementById('nomeDoProduto0').value="";
 document.getElementById('valor0').value="";
 clone.children[3].style.visibility = 'visible'
-
     
 }
 function adiciona_outro(id, nome, valor)
@@ -241,21 +234,14 @@ document.getElementById('0').value="";
 document.getElementById('nomeDoProduto0').value="";
 document.getElementById('valor0').value="";
 clone.children[3].style.visibility = 'visible'
-
     
 }
-
 function remove(event) {
-
     document.getElementById('valor_total').value = document.getElementById('valor_total').value - event.target.parentNode.children[2].value
    
-
     event.target.parentNode.style.display = "none"
 }
-
-
  function iniciaModal(modalID,id) {
-
         requisitar_cat(id);
               const modal = document.getElementById(modalID);
                 if(modal) {
@@ -270,7 +256,6 @@ function remove(event) {
         
        const mod = document.querySelector('.abremodal');
        mod.addEventListener('click', () => iniciaModal('modal-form'));
-
 function requisitar_cat(categoria){
 var requisicaoAjax = inicializaAjax();
 if (requisicaoAjax) {
@@ -281,7 +266,6 @@ if (requisicaoAjax) {
  if (requisicaoAjax.responseText) {
     dados = requisicaoAjax.responseText;
     document.getElementById('modal-form').innerHTML = dados
-
     // document.getElementById('nomeDoProduto').value=dadosJSON.nomeDoProduto;
     // document.getElementById('descricao').value=dadosJSON.descricao;
     // document.getElementById('valor').value=dadosJSON.valor;
@@ -303,15 +287,12 @@ function confirma(id){
     if(resp==false)
     {
         return false;
-
     }
     else
     {
         return true;
     }
 }
-
-
 </script>
 
 </body>
