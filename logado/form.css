@@ -7,18 +7,29 @@ table {
 }
 
 th, td {
-    text-align: left;
+    text-align: center;
     padding: 8px;
-    background-color: grey;
+    background-color: #d1d1d1;
 }
 
 
 tr:nth-child(even){
-	background-color: grey;
+	background-color: #d1d1d1;
 	border: 2px solid black;
 }
 
 th {
-    background-color: brown;
+    background-color: #73624B;
     color: white;
+}
+
+.nome {
+	font-size: 18px; 
+	font-style: bold;
+	font-family: "Lato",monospace;
+}
+
+.preco {
+	font-size: 30px;
+	color: green;
 }
