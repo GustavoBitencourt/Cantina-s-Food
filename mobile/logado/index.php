@@ -3,7 +3,7 @@
     session_start();
     require_once("conecta.php");
 
-    $comando="SELECT * FROM clientes";
+    $comando="SELECT * FROM clientes WHERE id = {$_SESSION['id']}";
     $enviar=mysqli_query($conn, $comando);
     
  ?>
@@ -62,14 +62,14 @@
             </a><div class="linha"></div>
             <a href="#" style="margin-top: 30px;"><img src="../IMG/config.png" id="icon">Pedidos</a>
             <a href="#" style="margin-top: 10px;"><img src="../IMG/pedidos.png" id="icon">Configurações</a>
-            <a href="logout.php" style="margin-top: 10px;"><img src="../IMG/logout.png" id="icon">Logout</a>
+            <a href="../index.php" style="margin-top: 10px;"><img src="../IMG/logout.png" id="icon">Logout</a>
             
         </div>
     </div>
 
 <div class="opcoesmenu">
     <div class="opcoes">
-        <div class="opcao1" id="opcao"><img src="IMG/ped.png"><a>Realizar Pedido</a></div>
+        <div class="opcao1" id="opcao"><img src="IMG/ped.png"><a href="pedido.php">Realizar Pedido</a></div>
         <div class="opcao2" id="opcao"><img src="IMG/pag.png"><a>Pagamentos Pendentes</a></div>
         <div class="opcao3" id="opcao"><img src="IMG/historic.png"><a>Histórico de Pedidos</a></div>
         <div class="opcao4" id="opcao"><img src="IMG/close.png"><a>Cancelar Pedidos</a></div>

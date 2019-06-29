@@ -107,7 +107,6 @@
         
        // const mod = document.querySelector('.abremodal');
        // mod.addEventListener('click', () => iniciaModal('modal-form'));
-
        function inicializaAjax() {
  var ajax
  if (window.XMLHttpRequest) {
@@ -152,14 +151,12 @@ function confirma(id){
     if(resp==false)
     {
         return false;
-
     }
     else
     {
         return true;
     }
 }
-
 </script>
 
 <a href="index.php">Voltar</a>

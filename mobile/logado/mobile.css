@@ -20,6 +20,11 @@
         bottom: 0;
 
  }
+
+    a {
+        text-decoration: none;
+        color: black;
+ }
     
     /* NAV NAME */
     .nav-name{
@@ -244,6 +249,10 @@
 
     }
 
+    .imgprodutos {
+        width: 30px;
+        height: 30px;
+    }
 
 }
 
