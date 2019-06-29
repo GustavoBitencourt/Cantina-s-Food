@@ -15,20 +15,20 @@ require_once('conecta.php');
 			$enviar=mysqli_query($conn, $comando);             
 			if($enviar) {                                      
 				$_SESSION['mensagem']="Cadastrado com sucesso";
-				header("location:index.php");                 
+				// header("location:index.php");                 
 				exit;                                           
 			}else{
 				$_SESSION['mensagem']="Erro ao cadastrar"; 
-				header("location:index.php"); 
+				// header("location:index.php"); 
 				exit; 
 			}   
 		}else{
 			$_SESSION['mensagem']="Algum dos campos ficou em branco"; 
-				header("location:index.php"); 
+				// header("location:index.php"); 
 				exit; 
 		}
 	}else{
-				header("location:index.php"); 
+				// header("location:index.php"); 
 				exit; 
 	}
 ?>	

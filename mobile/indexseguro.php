@@ -1,27 +1,6 @@
-<!DOCTYPE html>
 <?php
 
-if(isset($_POST['enviar'])):
-    $formatosPermitidos = array("png", "jpeg", "jpg", "gif");
-    $extensao = pathinfo($_FILES['imagem']['name'], PATHINFO_EXTENSION);
 
-    if(in_array($extensao, $formatosPermitidos)):
-        $pasta = "imgPerfil/";
-        $temporario = $_FILES['imagem']['tmp_name'];
-        $novoNome = uniqid().".$extensao";
-
-        if(move_uploaded_file($temporario, $pasta.$novoNome)):
-            $mensagem = "Sucesso!";
-        else:
-            $mensagem = "Erro Fatal!";
-        endif;
-    else:
-        $mensagem = "Formato Inválido de Imagem";
-    endif;
-
-    echo $mensagem;
-
-endif;
 
 ?>
 
@@ -69,9 +48,10 @@ endif;
                 <input type="password" name="" class=""><br> -->
                 
 
-                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST"  enctype="multipart/form-data">
+                <form action="executaUpload.php" method="POST"  enctype="multipart/form-data">
                 <input type="hidden" name="MAX_FILE_SIZE" value="200000">
                 Imagem Perfil:<input type="file" name="imagem" placeholder="Imagem">
+
                 <input type="submit" name="enviar" class="botaoenviar" value="Cadastrar">
                 </form>
             </form>

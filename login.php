@@ -45,7 +45,7 @@ require_once("conecta.php");
 </form>
 
 <a href="cadastroUsuario.php" class="button2">Cadastrar</a></div>
-<a href="esqueceuSenha.php" class="button2">Esqueci a senha</a>
+<a href="esqueceuSenha.php" class="esqsenha">Esqueceu a senha? Clique aqui!</a>
 <a href="sair.php" class="button5">Sair</a>
 
 
