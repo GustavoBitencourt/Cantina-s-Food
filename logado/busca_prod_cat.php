@@ -30,7 +30,7 @@ $enviar=mysqli_query($conn, $comando);
 ?>
         <tr>
             <td class="nome"><?php echo $produto['2'];?></td>
-            <td class="preco"><?php echo $produto['1'];?></td>
+            <td class="preco">R$ <?php echo $produto['1'];?></td>
             
 
             <td><img src="ImgProdutos/<?php echo $produto['3'];?>" class="imgprodutos"></td>
