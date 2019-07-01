@@ -54,7 +54,7 @@ if(!isset($_SESSION['nome'])){
             <article id="article4">
                 <div class="none"></div>
                 <div class="titleArticle">
-        <p><a href="vendas.php">Controle de Vendas</a></p>
+        <p><a href="historico.php">Controle de Vendas</a></p>
                 </div>
             </article>
         
