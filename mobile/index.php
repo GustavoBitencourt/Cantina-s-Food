@@ -88,6 +88,7 @@ endif;
                 <img src="IMG/lock.png" class="icon2"> Senha<br>
                 <input type="password" name="senha" class=""><br>
                 <input type="submit" class="botent" name="enviar" value="Entrar"></button> 
+                <a href="#" class="esqsenha">&nbsp Esqueci a senha</a>
                 </form>
 
 
@@ -110,6 +111,7 @@ endif;
 </html>
 
 <script>
+
     
     function abrir() {
 
