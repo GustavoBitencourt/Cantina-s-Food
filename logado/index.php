@@ -38,7 +38,7 @@ if(!isset($_SESSION['nome'])){
             <article id="article2">
                 <div class="none"></div>
                 <div class="titleArticle2">
-    <p><a href="#">Alterar produto</a></p>
+    <p><a href="#">Vendas Pendentes</a></p>
                 </div>
             </article>
 

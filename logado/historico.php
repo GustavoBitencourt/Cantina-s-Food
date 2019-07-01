@@ -30,7 +30,7 @@
     
 ?>
         <tr>
-            <td class="np"><?php echo $produto['1'];?></td>
+            <td class="np">R$ <?php echo $produto['1'];?></td>
             <td class="vl"><?php echo $produto['2'];?></td>
 
        
