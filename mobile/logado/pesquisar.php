@@ -34,5 +34,7 @@ while($rows_produtos = mysqli_fetch_array($resultado_produtos)){
 		echo "Valor: ".$rows_produtos['valor']."<br>"; -->
 </div>
 </div>
+
 <?php
-}
+}?>
+<button><a href="pedido.php">Voltar</a></button>

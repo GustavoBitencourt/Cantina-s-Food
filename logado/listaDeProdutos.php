@@ -33,15 +33,15 @@
     
 ?>
         <tr>
-            <td><?php echo $produto['2'];?></td>
-            <td><?php echo $produto['1'];?></td>
+            <td class="np"><?php echo $produto['2'];?></td>
+            <td class="vl">R$ <?php echo $produto['1'];?></td>
             <td><?php echo $produto['6'];?></td>
 
             <td><img src="ImgProdutos/<?php echo $produto['3'];?>" class="imgprodutos"></td>
-            <td><a href="#/?produto=<?php echo $produto['0'];?>" onclick="iniciaModal('modal-form',<?php echo $produto['0'];?>)" class="abremodal"><button><img src="../IMG/edit.png" class="edit"></button></td>
+            <td><a href="#/?produto=<?php echo $produto['0'];?>" onclick="iniciaModal('modal-form',<?php echo $produto['0'];?>)" class="abremodal"><button class="edit"></button></td>
             <td><form action="excluiProduto.php" method="get">
                 <input type="hidden" name="id" value="<?php echo $produto['0']?>" />
-                <button><img src="../IMG/excl.png" class="edit" onclick="return confirma('<?php echo $produto['2']?>')"></button></form></td>
+                <button class="excl" onclick="return confirma('<?php echo $produto['2']?>')"></button></form></td>
         </tr>
 
 

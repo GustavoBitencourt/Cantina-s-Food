@@ -13,7 +13,7 @@ nav, ul {
 /* -- HEADER -- */
 
 .menu-bg {
-    background: grey;
+    background: #008675;
 }
 
 .menu {
@@ -151,7 +151,7 @@ h1{
 .menuzao .articles article {
     width: 10%;
     height: 45%;
-    background-color: #3f3f3f;
+    background-color: #2f4858;
 }
 
 #article1 {
@@ -195,26 +195,29 @@ h1{
 .menuzao .articles article .titleArticle p {
     color: #fff;
     font-family: 'Roboto Condensed', sans-serif;
-    background-color: grey;
+    background-color: rgba(03,95,90,5);
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     text-align: center;
     align-items: center;
-
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .menuzao .articles article .titleArticle2 p {
     color: #fff;
     font-family: 'Roboto Condensed', sans-serif;
-    background-color: grey;
+    background-color: rgba(03,95,90,5);
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     text-align: center;
     align-items: center;
+    font-weight: bold;
+    font-size: 18px;
 
 }
 
@@ -803,27 +806,67 @@ h1 {
 
 
 .edit {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
+    background-image: url("IMG/edit.png");
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
+
+.excl {
+    width: 40px;
+    height: 40px;
+    background-image: url("IMG/excl.png");
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
 
 table {
     border-collapse: collapse;
     width: 100%;
     align-items: center;
     text-align: center;
+    color: white;
+    
+}
+.np{
+    color: white.
+    
+}
+
+.vl {
+    /*color: green;*/
+    font-size: 25px;
 }
 
 th, td {
     text-align: left;
     padding: 8px;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
 }
 
-tr:nth-child(even){background-color: #f2f2f2}
+tr {
+    background-color: #4f4538;
+}
+
+tr:nth-child(even){
+    background-color: #b6a999;
+}
 
 th {
     background-color: #ffb400;
-    color: white;
+    color: black;
 }
 
 .geral {
