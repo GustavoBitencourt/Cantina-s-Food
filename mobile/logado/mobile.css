@@ -364,14 +364,14 @@
         /*background-color: green;*/
         text-align: center;
         align-items: flex-end;
-        justify-content: center;
+        justify-content: left;
     }
 
     .pesquisar {
         text-align: center;
         color: black;
         display: flex;
-        justify-content: center;
+        justify-content: left;
         align-items: center;
     }
 
@@ -379,10 +379,25 @@
         height: 28px;
         border: 1px solid #ffb400;
         border-radius: 5px;
-        width: 30%;
+        width: 40%;
         color: black;
         text-align: center;
-        margin-left: -52%;
+        margin-left: 5%;
+    }
+
+    .voltar {
+        background-image: url(IMG/voltar.png);
+        background-position: center;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-color: #f1f1f1;
+        width: 40px;
+        height: 40px;
+        border: none;
+        position: fixed;
+        margin-left: 10%;
+        margin-top: 3%;
+
     }
 
     .imgpesq {
@@ -423,14 +438,29 @@
 
 .valorTotal {
     position: fixed;
-    height: 46px;
-    width: 125px;
+    height: 40px;
+    width: 120px;
     background-color: black;
     border: 1px solid #fff;
     box-sizing: border-box;
     border-radius: 50px;
     color: white;
     text-align: center;
-    margin-left: 50%;
-    margin-top: -50%;
+    margin-left: 58%;
+    margin-top: -59%;
+}
+
+.finalizar {
+    position: fixed;
+    border: none;
+    border-radius: 5px;
+    background-color: green;
+    color: white;
+    margin-top: -47%;
+    margin-left: 59%;
+    height: 30px;
+    width: 120px;
+    border: 1px solid black;
+    text-align: center;
+
 }

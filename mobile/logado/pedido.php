@@ -29,6 +29,8 @@ require_once("conecta.php");
     <link rel="stylesheet" type="text/css" href="mobile.css">
     <link rel="icon"  href="../../IMG/logo.png">
     <link href="https://fonts.googleapis.com/css?family=Mina:400,700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+    <script type="text/javascript" src="busca.js"></script>
 </head>
         
 <!-- <header>
@@ -72,13 +74,13 @@ require_once("conecta.php");
     </div>
 
         <div class="busca">
-            <form action="pesquisar.php" method="POST" class="pesquisar">
-                <input type="text" name="pesquisar" placeholder="Pesquisar Produto" class="inputnome">
+            <form action="pesquisar2.php" method="POST" class="pesquisar">
+                <input type="text" name="campo" id="campo" placeholder="Pesquisar Produto" class="inputnome">
                 <button name="SendPesq" type="submit" class="imgpesq"></button>
             </form>
-        </div>
-    
-    <div class="produtos">
+        </div><a href="index.php"><button class="voltar"></button></a>
+    <br><br>
+    <div class="produtos" id="resultado">
         <div class="areaproduto" >
 
         <?php
