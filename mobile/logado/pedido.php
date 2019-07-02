@@ -12,15 +12,7 @@
         echo $_SESSION['mensagem'];
         unset($_SESSION['mensagem']);
     }
-
-
-
-
-
-
-
 require_once("conecta.php");
-
     // $comando="SELECT * FROM clientes WHERE id = {$_SESSION['id']}";
     // $enviar=mysqli_query($conn, $comando);
     
@@ -40,20 +32,14 @@ require_once("conecta.php");
 </head>
         
 <!-- <header>
-
         <nav>
             <div class="nav-name">
                 <a href="index.php"><div class="container">CantIF</div></a>
             </div>
-
             <div class="nav-menu">
                 <div class="container"><img onclick="abrir()" src="../../IMG/menu.png"></div>
             </div>
         </nav>
-
-
-
-
          <div id="menu" class="menu">
         <div class="container">
             <a id="avatar" href="#"> -->
@@ -126,23 +112,24 @@ require_once("conecta.php");
 }
 ?>
 
+<input readonly="true" type="text" name="valor_total" id="valor_total" class="valorTotal" value="0" placeholder="Valor total">
+<td><form action="finalizar.php" method="get">
+                <input type="submit" class="finalizar" name="finalizar" value="Finalizar Pedido">
+                </form></td>
+
 </html>
 
 <script>
     
     function abrir() {
-
     var el = document.getElementById('menu')
-
     console.log(el.style.display)
-
     if (el.style.display == 'none' || el.style.display == '') {
         el.style.display = 'flex';
     } else {
         el.style.display = 'none';
     }
 }
-
 if (window.innerWidth > 450) {
     alert("Para visualizar, utilize um dispositivo mobile, ou abra em modo desenvolvedor (F12) e logo após ative o modo mobile Ctrl+Shift+M .");
 }

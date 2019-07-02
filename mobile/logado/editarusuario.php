@@ -3,8 +3,8 @@
     session_start();
     require_once("conecta.php");
 
-    // $comando="SELECT * FROM clientes WHERE id = {$_SESSION['id']}";
-    // $enviar=mysqli_query($conn, $comando);
+    $comando="SELECT * FROM clientes WHERE id = {$_SESSION['id']}";
+    $enviar=mysqli_query($conn, $comando);
    
    if (isset($_GET['cliente']) && !empty($_GET['cliente'])) {
 		$cliente=$_GET['cliente'];

@@ -379,9 +379,10 @@
         height: 28px;
         border: 1px solid #ffb400;
         border-radius: 5px;
-        width: 50%;
+        width: 30%;
         color: black;
         text-align: center;
+        margin-left: -52%;
     }
 
     .imgpesq {
@@ -418,4 +419,18 @@
     .aviso {
         display: block;
     }
+}
+
+.valorTotal {
+    position: fixed;
+    height: 46px;
+    width: 125px;
+    background-color: black;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    border-radius: 50px;
+    color: white;
+    text-align: center;
+    margin-left: 50%;
+    margin-top: -50%;
 }
