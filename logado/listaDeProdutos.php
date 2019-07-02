@@ -51,9 +51,9 @@
 
     </table>
 
-    <div class="CssCadastrar">
+   <!--  <div class="CssCadastrar">
     <button href="index.php">Cadastrar Produto</button>   
-    </div>
+    </div> -->
             
 <?php
 }

@@ -23,7 +23,7 @@ require_once("cabecalho.php");
             <article id="iten2">
                 <div class="none"></div>
                 <div class="titleArticle">
-    <p><a href="#">Big Salgados</a></p>
+    <p> <a href="#/?categoria=bebidas" onclick="iniciaModal('modal-form','bigSalgados')" class="abremodal">Big Salgados</a></p>
                 </div>
             </article>
 
@@ -31,7 +31,7 @@ require_once("cabecalho.php");
             <article id="iten3">
                 <div class="none"></div>
                 <div class="titleArticle">
-        <p><a href="#">Salgados</a></p>
+        <p> <a href="#/?categoria=bebidas" onclick="iniciaModal('modal-form','salgados')" class="abremodal">Salgados</a></p>
                 </div>
             </article>
 
@@ -39,7 +39,7 @@ require_once("cabecalho.php");
             <article id="iten4">
                 <div class="none"></div>
                 <div class="titleArticle">
-        <p><a href="#">Bebidas</a></p>
+        <p> <a href="#/?categoria=bebidas" onclick="iniciaModal('modal-form','bebidas')" class="abremodal">Bebidas</a></p>
                 </div>
             </article>
 

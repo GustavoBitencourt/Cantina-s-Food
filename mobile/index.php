@@ -88,7 +88,7 @@ endif;
                 <img src="IMG/lock.png" class="icon2"> Senha<br>
                 <input type="password" name="senha" class=""><br>
                 <input type="submit" class="botent" name="enviar" value="Entrar"></button> 
-                <a href="#" class="esqsenha">&nbsp Esqueci a senha</a>
+                <a class="esqsenha">&nbsp Esqueci a senha</a>
                 </form>
 
 
@@ -132,3 +132,4 @@ if (window.innerWidth > 950) {
 }
 
 </script>
+

@@ -8,10 +8,7 @@
     if (mysqli_num_rows($enviar)>0) {
         $resultado=mysqli_fetch_all($enviar);
      
-        if(!empty($_SESSION['mensagem'])) {
-        echo $_SESSION['mensagem'];
-        unset($_SESSION['mensagem']);
-    }
+        
 require_once("conecta.php");
     // $comando="SELECT * FROM clientes WHERE id = {$_SESSION['id']}";
     // $enviar=mysqli_query($conn, $comando);

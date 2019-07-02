@@ -34,7 +34,7 @@ $enviar=mysqli_query($conn, $comando);
             
 
             <td><img src="ImgProdutos/<?php echo $produto['3'];?>" class="imgprodutos"></td>
-            <td><a href="#/?produto=<?php echo $produto['0'];?>"  onclick="adiciona_outro(<?php echo $produto['0'];?>,'<?php echo $produto['2'];?>',<?php echo $produto['1'];?>)"><button>Adicionar</button></td>
+            <td><a href="#/?produto=<?php echo $produto['0'];?>"  onclick="adiciona_outro(<?php echo $produto['0'];?>,'<?php echo $produto['2'];?>',<?php echo $produto['1'];?>)"><button class="add">Adicionar</button></td>
             
         </tr>
 
