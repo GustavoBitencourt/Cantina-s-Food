@@ -74,10 +74,12 @@ require_once("conecta.php");
     </div>
 
         <div class="busca">
-            <form action="pesquisar2.php" method="POST" class="pesquisar">
-                <input type="text" name="campo" id="campo" placeholder="Pesquisar Produto" class="inputnome">
-                <button name="SendPesq" type="submit" class="imgpesq"></button>
+            <form action="" id="form-pesquisar" method="POST" class="pesquisar">
+                <input type="text" name="campo" id="pesquisa" placeholder="Pesquisar Produto" class="inputnome">
+                <button name="enviar" value="pesquisar" type="submit" class="imgpesq"></button>
             </form>
+        
+        
         </div><a href="index.php"><button class="voltar"></button></a>
     <br><br>
     <div class="produtos" id="resultado">

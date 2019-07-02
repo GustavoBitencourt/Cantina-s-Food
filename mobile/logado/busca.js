@@ -1,29 +1,20 @@
-$(document).ready(function(){
-
-	$('#campo').keyup(function(){
-
-		$('form').submit(function(){
-
-			var dados = $(this).serialize();
-
-			$.ajax({
-
-				url: 'pesquisar2.php',
-				type: 'post',
-				dataType: 'html',
-				sucess: function(data){
-					$('$resultado').empty().html(data);
-				}
-
+$(function(){
+	//Pesquisar os cursos sem refresh na página
+	$("#pesquisa").keyup(function(){
+		
+		var pesquisa = $(this).val();
+		
+		//Verificar se há algo digitado
+		if(pesquisa != ''){
+			var dados = {
+				palavra : pesquisa
+			}		
+			$.post('pesquisar.php', dados, function(retorna){
+				//Mostra dentro da ul os resultado obtidos 
+				$(".produtos").html(retorna);
 			});
-
-			return false;
-
-		});
-
-		$('form').trigger('submit');
-
+		}else{
+			$(".produtos").html('');
+		}		
 	});
-
-
 });

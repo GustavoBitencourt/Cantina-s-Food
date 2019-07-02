@@ -1,35 +1,33 @@
 <link rel="stylesheet" type="text/css" href="mobile.css">
 <?php
-
-	require_once('conecta.php');
-
-	$campo="%{$_POST['campo']}%";
-$comando="SELECT * FROM produtos where nomeDoProduto like ?";
-    $enviar=mysqli_query($conn, $comando);
-		// $sql=$conn->prepare('select * from produtos where nomeDoProduto like ?');
-		// $sql->bind_param("s", $campo);
-		// $sql->execute();
-		// $sql->bind_result($nomeDoProduto, $valor, $imagem);
-
-		// while ($enviar->fetch()) {
-		// 	echo $nomeDoProduto.'<br>';
-		// }?>
-    <div class="produtos" id="resultado">
+	//Incluir a conexão com banco de dados
+	include_once('conecta.php');
+	
+	//Recuperar o valor da palavra
+	$produtos = $_POST['palavra'];
+	
+	//Pesquisar no banco de dados nome do curso referente a palavra digitada pelo usuário
+	$produtos = "SELECT * FROM produtos WHERE nomeDoProduto LIKE '%$produtos%'";
+	$resultado_produtos = mysqli_query($conn, $produtos);
+	
+	if(mysqli_num_rows($resultado_produtos) <= 0){
+		echo "Nenhum produto encontrado...";
+	}else{
+		while($rows_produtos = mysqli_fetch_assoc($resultado_produtos)){
+			?><div class="produtos">
         <div class="areaproduto" >
-<?php
-    foreach ($resultado as $produto) :
-    
-?>
-
-            <article id="itens">
-            <div class="none"> <div class="nomeproduto"><?php echo $produto['2'];?></div>
-            <div class="preco">R$ <?php echo $produto['1'];?></div>
-            <div class="imagemproduto"><img src="../../logado/ImgProdutos/<?php echo $produto['3'];?>" class="imgprodutos"></div>
+		<article id="itens">
+            <div class="none"> <div class="nomeproduto"><?php echo "".$rows_produtos['nomeDoProduto']."<br>";?></div>
+            <div class="preco">R$ <?php echo "".$rows_produtos['valor']."<br>";?></div>
+            <div class="imagemproduto"><img src="../../logado/ImgProdutos/<?php echo "".$rows_produtos['imagem'];?>" class="imgprodutos"></div>
             <div class="comprar"><button id="comp">Comprar</button></div></div></article>
-            
-        
 
+		<!-- echo "Produto: ".$rows_produtos['nomeDoProduto']."<br>";
+		echo "Valor: ".$rows_produtos['valor']."<br>"; -->
+</div>
+</div>
 
 <?php
-    endforeach;
-?>
+}
+		}
+	
